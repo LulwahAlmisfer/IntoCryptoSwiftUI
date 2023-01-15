@@ -21,7 +21,7 @@ struct OnBoarding1View: View {
                     }
                 }.padding(.horizontal)
                 LottieView(filename: "99448-crypto-coins")
-                Text("Sensation of true trading").font(.title).bold()
+                Text("Sensation of true trading").font(.title2).bold()
                 Text("Get a representation of the market ")
                 Text("and monitor your wallet  ")
             }.foregroundColor(.theme.accent).font(.title2)
