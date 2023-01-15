@@ -32,7 +32,7 @@ struct ChartView: View {
     var body: some View {
         VStack {
             chartView
-                .frame(height: 200)
+                .frame(width: 330, height: 80)
                 .background(chartBackground)
                 .overlay(chartYAxis.padding(.horizontal, 4), alignment: .leading)
             
@@ -43,9 +43,9 @@ struct ChartView: View {
         .foregroundColor(Color.theme.secondaryText)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation(.linear(duration: 2.0)) {
+                //withAnimation(.linear(duration: 2.0)) {
                     percentage = 1.0
-                }
+               // }
             }
         }
         
@@ -89,29 +89,29 @@ extension ChartView {
     
     private var chartBackground: some View {
         VStack {
-            Divider()
-            Spacer()
-            Divider()
-            Spacer()
-            Divider()
+//            Divider()
+//           Spacer()
+//          Divider()
+//           Spacer()
+//            Divider()
         }
     }
     
     private var chartYAxis: some View {
         VStack {
-            Text(maxY.formattedWithAbbreviations())
+           // Text(maxY.formattedWithAbbreviations())
             Spacer()
-            Text(((maxY + minY) / 2).formattedWithAbbreviations())
+           // Text(((maxY + minY) / 2).formattedWithAbbreviations())
             Spacer()
-            Text(minY.formattedWithAbbreviations())
+          //  Text(minY.formattedWithAbbreviations())
         }
     }
     
     private var chartDateLabels: some View {
         HStack {
-            Text(startingDate.asShortDateString())
+           // Text(startingDate.asShortDateString())
             Spacer()
-            Text(endingDate.asShortDateString())
+           // Text(endingDate.asShortDateString())
         }
     }
     

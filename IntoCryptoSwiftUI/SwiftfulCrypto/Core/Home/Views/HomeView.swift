@@ -32,7 +32,7 @@ struct HomeView: View {
                
                 homeHeader
                 if selector == 1 {
-                    portfolioCoinsListH
+                    portfolioCoinsListH.padding(.leading)
                 }
                 //HomeStatsView(showPortfolio: $showPortfolio)
                 SearchBarView(searchText: $vm.searchText)

@@ -24,16 +24,21 @@ struct CoinRowView: View {
                     VStack {
                         
                         HStack{
-                            CoinImageView(coin: coin).frame(width: 50, height: 50)
-                            Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()
-                            Spacer()
-                            VStack(alignment: .trailing) {
-                                Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
-                                    .bold()
-                                Text((coin.currentHoldings ?? 0).asNumberString())
-                            }.foregroundColor(.theme.background)
                             VStack{
-                               
+                                HStack{
+                                    CoinImageView(coin: coin).frame(width: 50, height: 50)
+                                    
+                                    Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,50)
+                                VStack(alignment: .trailing) {
+                                    Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
+                                        .bold()
+                                    Text((coin.currentHoldings ?? 0).asNumberString())
+                                }.foregroundColor(.theme.background)
+                            }
+                            Spacer()
+                        
+                            VStack{
+                              
                                 Text(coin.currentPrice.asCurrencyWith6Decimals())
                                     .bold()
                                     .foregroundColor(Color.theme.background)
@@ -43,6 +48,8 @@ struct CoinRowView: View {
                                         Color.theme.green :
                                         Color.theme.red
                                     )
+                            
+                              
                             }
                            
                             
@@ -51,7 +58,8 @@ struct CoinRowView: View {
                         
                         }.padding(.horizontal,35)
                       
-                       // ChartView(coin: coin).frame(width: 150, height: 1)
+                        ChartView(coin: coin)
+                            .padding(.bottom,35)
                     }
                     
                 }
