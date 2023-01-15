@@ -28,11 +28,19 @@ struct SettingsList: View {
                 ForEach(self.Settings, id: \.self)
                 {
                     item in Text(item)
-                }
-            }.padding()
-            //    .scrollContentBackground(.hidden).background(Color("SecondMainColor"))
+                
+                } .foregroundColor(Color("MainColor"))
+                .listRowBackground(Color("SecondMainColor"))
+            }
+            .background(Color("MainColor"))
+            .scrollContentBackground(.hidden)
+        
+
             
-        }.padding().navigationTitle("Settings")
+            
+            
+        }.navigationTitle("Settings").padding(.all,10)
+            .scrollDisabled(true)
     }
 }
 

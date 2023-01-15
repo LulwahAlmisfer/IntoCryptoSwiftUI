@@ -28,12 +28,12 @@ struct CoinRowView: View {
                         HStack{
                             VStack{
                                 HStack{
-                                    CoinImageView(coin: coin).frame(width: 35, height: 35)
+                                    CoinImageView(coin: coin).frame(width: 33, height: 33)
                                     
                                     Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,30)
                                 
-                        VStack(alignment: .center) {
-                                    Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())    .bold()
+                        VStack(alignment: .leading) {
+                            Text(coin.currentHoldingsValue.asCurrencyWith2Decimals()).bold()
                                
                             
                             
@@ -46,7 +46,7 @@ struct CoinRowView: View {
                         
                             
                             
-                            VStack{
+                            VStack(alignment: .trailing){
                               
                                 Text(coin.currentPrice.asCurrencyWith6Decimals())
                                     .bold()
