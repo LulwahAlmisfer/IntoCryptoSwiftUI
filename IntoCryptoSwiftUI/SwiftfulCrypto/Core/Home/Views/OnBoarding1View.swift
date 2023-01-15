@@ -24,7 +24,7 @@ struct OnBoarding1View: View {
                 Text("Sensation of true trading").font(.title).bold()
                 Text("Get a representation of the market ")
                 Text("and monitor your wallet  ")
-            }.foregroundColor(.theme.accent).font(.title3)
+            }.foregroundColor(.theme.accent).font(.title2)
         }
     }
 }
