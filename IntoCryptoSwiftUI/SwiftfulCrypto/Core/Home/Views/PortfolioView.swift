@@ -105,13 +105,16 @@ extension PortfolioView {
     private var portfolioInputSection: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                HStack{
+                    Text("Current price of")
+                    Text(selectedCoin?.symbol.uppercased() ?? "")
+                }
                 Spacer()
                 Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
             }
             Divider()
             HStack {
-                Text("Amount holding:")
+                Text("Amount holding")
                 Spacer()
                 TextField("Ex: 1.4", text: $quantityText)
                     .multilineTextAlignment(.trailing)
@@ -119,7 +122,7 @@ extension PortfolioView {
             }
             Divider()
             HStack {
-                Text("Current value:")
+                Text("Current value")
                 Spacer()
                 Text(getCurrentValue().asCurrencyWith2Decimals())
             }

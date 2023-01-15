@@ -1,9 +1,45 @@
-/* 
-  Localizable.strings
-  SwiftfulCrypto
-
-  Created by lulwah on 14/01/2023.
-  
-*/
 "Live Prices" = "Live Prices";
-"Live Pric" = "Live Pric";
+"Sensation of true trading" = "Sensation of true trading";
+"Get a representation of the market" = "Get a representation of the market";
+"and monitor your wallet" = "and monitor your wallet";
+"Skip" = "Skip";
+"Ideal Learning" = "Ideal Learning";
+"register an account" = "register an account";
+"and start virtually trading" = "and start virtually trading";
+"with real-time prices risk free" = "with real-time prices risk free";
+"Start Now" = "Start Now";
+"Log in" = "Log in";
+"Username" = "Username";
+"Password" = "Password";
+"Don't have an account? Sign up" = "Don't have an account? Sign up";
+"Sign up" = "Sign up";
+"Email" = "Email";
+"Portfolio" = "Portfolio";
+"Search by name or symbol..." = "Search by name or symbol...";
+"Coin" = "Coin";
+"Price" = "Price";
+"Home" = "Home";
+"Profile" = "Profile";
+"Edit Portfolio" = "Edit Portfolio";
+"Current price of" = "Current price of";
+"Amount holding" = "Amount holding";
+"Current value" = "Current value";
+"Save" = "Save";
+"Total portfolio value" = "Total portfolio value";
+"Total available cash" = "Total available cash";
+"Total Gain/Loss cash" = "Total Gain/Loss cash";
+"Back" = "Back";
+"Buy" = "Buy";
+"Sell" = "Sell";
+"Amount" = "Amount";
+"Market price" = "Market price";
+"Total" = "Total";
+"Owned" = "Owned";
+"Account" = "Account";
+"Terms and conditions" = "Terms and conditions";
+"Leave a review" = "Leave a review";
+"Change language" = "Change language";
+"Dark mode" = "Dark mode";
+"Log out" = "Log out";
+"contact us" = "contact us";
+"Delete account" = "Delete account";

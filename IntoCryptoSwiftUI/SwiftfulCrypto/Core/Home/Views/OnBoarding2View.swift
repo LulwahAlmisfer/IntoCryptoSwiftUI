@@ -16,9 +16,9 @@ struct OnBoarding2View: View {
         
                 LottieView(filename: "105300-crypto")
                 Text("Ideal Learning").font(.title).bold()
-                Text("register an account ")
+                Text("register an account")
                 Text("and start virtually trading")
-                Text(" with real-time prices risk free ")
+                Text("with real-time prices risk free")
                 
                 Button {
                     shouldshowonb.toggle()

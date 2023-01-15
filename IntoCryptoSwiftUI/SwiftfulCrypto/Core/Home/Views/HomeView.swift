@@ -16,7 +16,7 @@ struct HomeView: View {
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
    @State var selector = 1
-    @AppStorage("key5")  var shouldshowonb = true
+    @AppStorage("key8")  var shouldshowonb = true
     var body: some View {
         ZStack {
             // background layer
