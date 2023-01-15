@@ -48,6 +48,9 @@
 		028E1C0F264F6B1200A4B420 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E1C0E264F6B1200A4B420 /* SettingsView.swift */; };
 		028E1C15264F767C00A4B420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028E1C14264F767C00A4B420 /* LaunchScreen.storyboard */; };
 		028E1C19264F784A00A4B420 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E1C18264F784A00A4B420 /* LaunchView.swift */; };
+		337F0BDD29743D860030883E /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDA29743D860030883E /* SettingsList.swift */; };
+		337F0BDE29743D860030883E /* ContactUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDB29743D860030883E /* ContactUS.swift */; };
+		337F0BE029743E020030883E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDF29743E020030883E /* Profile.swift */; };
 		A0554C15296CB10E0052A8E3 /* coinsViewlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */; };
 		A05571FE29733B89004CA5ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A055720029733B89004CA5ED /* Localizable.strings */; };
 		A0D7ADB12973329400325721 /* OnBoarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D7ADB02973329400325721 /* OnBoarding1View.swift */; };
@@ -102,6 +105,9 @@
 		028E1C0E264F6B1200A4B420 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		028E1C14264F767C00A4B420 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028E1C18264F784A00A4B420 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		337F0BDA29743D860030883E /* SettingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
+		337F0BDB29743D860030883E /* ContactUS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUS.swift; sourceTree = "<group>"; };
+		337F0BDF29743E020030883E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coinsViewlist.swift; sourceTree = "<group>"; };
 		A05571FF29733B89004CA5ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A055720129733B8B004CA5ED /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		0274CD5C26478CB5008099B6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				337F0BD829743D860030883E /* ProfilePage */,
 				0274CD5E26478CC4008099B6 /* ViewModels */,
 				0274CD5D26478CC0008099B6 /* Views */,
 			);
@@ -348,6 +355,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		337F0BD829743D860030883E /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				337F0BDF29743E020030883E /* Profile.swift */,
+				337F0BDA29743D860030883E /* SettingsList.swift */,
+				337F0BDB29743D860030883E /* ContactUS.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,11 +461,13 @@
 				0274CDA72648AEA7008099B6 /* StatisticView.swift in Sources */,
 				0274CD8F2647D85F008099B6 /* CoinImageView.swift in Sources */,
 				A0D7ADB32973341200325721 /* OnBoarding2View.swift in Sources */,
+				337F0BE029743E020030883E /* Profile.swift in Sources */,
 				0274CD43264783B5008099B6 /* SwiftfulCryptoApp.swift in Sources */,
 				0274CDA026489F3A008099B6 /* UIApplication.swift in Sources */,
 				028E1C19264F784A00A4B420 /* LaunchView.swift in Sources */,
 				0274CD6626478E1E008099B6 /* CircleButtonView.swift in Sources */,
 				0274CD582647880E008099B6 /* Color.swift in Sources */,
+				337F0BDD29743D860030883E /* SettingsList.swift in Sources */,
 				0274CDD1264A480B008099B6 /* DetailView.swift in Sources */,
 				0274CDCA264A372F008099B6 /* HapticManager.swift in Sources */,
 				0274CD9C26489943008099B6 /* SearchBarView.swift in Sources */,
@@ -465,6 +484,7 @@
 				0274CD772647A848008099B6 /* Double.swift in Sources */,
 				0274CD922647D9F1008099B6 /* CoinImageService.swift in Sources */,
 				0274CDD4264A6094008099B6 /* CoinDetailModel.swift in Sources */,
+				337F0BDE29743D860030883E /* ContactUS.swift in Sources */,
 				0274CD6E264795C5008099B6 /* CoinModel.swift in Sources */,
 				0274CDDB264A6348008099B6 /* CoinDetailDataService.swift in Sources */,
 				0274CDD8264A6314008099B6 /* DetailViewModel.swift in Sources */,

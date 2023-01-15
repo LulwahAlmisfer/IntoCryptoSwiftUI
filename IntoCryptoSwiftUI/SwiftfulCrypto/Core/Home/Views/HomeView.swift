@@ -29,15 +29,15 @@ struct HomeView: View {
             
             // content layer
             VStack {
-               
-                homeHeader
+                if selector != 3{
+                    homeHeader}
                 if selector == 1 {
                     portfolioCoinsListH.padding(.leading)
                     SearchBarView(searchText: $vm.searchText)
                 }
                 //HomeStatsView(showPortfolio: $showPortfolio)
-                
-                columnTitles
+                if selector == 1 {
+                    columnTitles}
                 
 //                if !showPortfolio {
 //                    allCoinsList
@@ -62,11 +62,18 @@ struct HomeView: View {
                             Image(systemName: "house")
                             Text("Home")
                         } }.tag(1)
+                    
                 portfolioCoinsList.tabItem {
                     VStack {
                         Image(systemName: "creditcard")
                         Text("Portfolio")
                     }}.tag(2)
+                    
+                   Profile().tabItem{
+                    VStack {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }}.tag(3)
                     
                 }
 
