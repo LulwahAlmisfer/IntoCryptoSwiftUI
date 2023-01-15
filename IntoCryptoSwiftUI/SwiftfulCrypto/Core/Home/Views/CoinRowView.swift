@@ -17,50 +17,71 @@ struct CoinRowView: View {
         HStack(spacing: 0) {
             if showHoldingsColumn {
 
+                
+                
                 ZStack{
                     
                     RoundedRectangle(cornerRadius: 25).foregroundColor(.theme.accent).frame(width: 350, height: 200)
                     
-                    VStack {
+        VStack {
                         
                         HStack{
                             VStack{
                                 HStack{
-                                    CoinImageView(coin: coin).frame(width: 50, height: 50)
+                                    CoinImageView(coin: coin).frame(width: 35, height: 35)
                                     
-                                    Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,50)
-                                VStack(alignment: .trailing) {
-                                    Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
-                                        .bold()
+                                    Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,30)
+                                
+                        VStack(alignment: .center) {
+                                    Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())    .bold()
+                               
+                            
+                            
                                     Text((coin.currentHoldings ?? 0).asNumberString())
-                                }.foregroundColor(.theme.background)
+                                .bold()
+                            
+                        }.foregroundColor(.theme.background)
                             }
                             Spacer()
                         
+                            
+                            
                             VStack{
                               
                                 Text(coin.currentPrice.asCurrencyWith6Decimals())
                                     .bold()
+                                    .padding(.top,10)
                                     .foregroundColor(Color.theme.background)
+                                
+                                
                                 Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
                                     .foregroundColor(
                                         (coin.priceChangePercentage24H ?? 0 >= 0) ?
                                         Color.theme.green :
                                         Color.theme.red
                                     )
-                            
-                              
-                            }
+                                
+                                
+
+                            }.padding(.trailing,10)
                            
                             
-                                .padding(.vertical)
-
+                             
                         
                         }.padding(.horizontal,35)
                       
                         ChartView(coin: coin)
-                            .padding(.bottom,35)
+                            .padding(.bottom,35).aspectRatio(contentMode: .fit)
+                     
                     }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 }
          

@@ -32,7 +32,7 @@ struct ChartView: View {
     var body: some View {
         VStack {
             chartView
-                .frame(width: 330, height: 80)
+                .frame(width: 330, height: 77,alignment: .center)
                 .background(chartBackground)
                 .overlay(chartYAxis.padding(.horizontal, 4), alignment: .leading)
             
@@ -80,10 +80,10 @@ extension ChartView {
             }
             .trim(from: 0, to: percentage)
             .stroke(lineColor, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
-            .shadow(color: lineColor, radius: 10, x: 0.0, y: 10)
-            .shadow(color: lineColor.opacity(0.5), radius: 10, x: 0.0, y: 20)
-            .shadow(color: lineColor.opacity(0.2), radius: 10, x: 0.0, y: 30)
-            .shadow(color: lineColor.opacity(0.1), radius: 10, x: 0.0, y: 40)
+            .shadow(color: lineColor, radius: 10, x: 0.0, y: 5)
+            .shadow(color: lineColor.opacity(0.5), radius: 10, x: 0.0, y: 7)
+            .shadow(color: lineColor.opacity(0.2), radius: 10, x: 0.0, y: 10)
+            .shadow(color: lineColor.opacity(0.1), radius: 10, x: 0.0, y: 7)
         }
     }
     
