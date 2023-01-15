@@ -75,7 +75,7 @@ struct HomeView: View {
                         Text("Profile")
                     }}.tag(3)
                     
-                }
+                }.background(Color("MainColor"))
 
                 Spacer(minLength: 0)
             }
