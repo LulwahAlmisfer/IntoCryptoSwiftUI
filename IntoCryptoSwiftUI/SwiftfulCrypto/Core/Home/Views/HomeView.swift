@@ -33,9 +33,10 @@ struct HomeView: View {
                 homeHeader
                 if selector == 1 {
                     portfolioCoinsListH.padding(.leading)
+                    SearchBarView(searchText: $vm.searchText)
                 }
                 //HomeStatsView(showPortfolio: $showPortfolio)
-                SearchBarView(searchText: $vm.searchText)
+                
                 columnTitles
                 
 //                if !showPortfolio {
