@@ -51,8 +51,24 @@
 		337F0BDD29743D860030883E /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDA29743D860030883E /* SettingsList.swift */; };
 		337F0BDE29743D860030883E /* ContactUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDB29743D860030883E /* ContactUS.swift */; };
 		337F0BE029743E020030883E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDF29743E020030883E /* Profile.swift */; };
+		A004CB0E29770ADC001B5294 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0D29770ADC001B5294 /* FirebaseAnalytics */; };
+		A004CB1029770ADC001B5294 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0F29770ADC001B5294 /* FirebaseAuth */; };
+		A004CB1229770ADC001B5294 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB1129770ADC001B5294 /* FirebaseCrashlytics */; };
+		A004CB1429770ADC001B5294 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB1329770ADC001B5294 /* FirebaseDatabase */; };
+		A004CB1629770ADC001B5294 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB1529770ADC001B5294 /* FirebaseDatabaseSwift-Beta */; };
+		A04F97D12977100E00808C3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04F97D02977100E00808C3C /* GoogleService-Info.plist */; };
 		A0554C15296CB10E0052A8E3 /* coinsViewlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */; };
 		A05571FE29733B89004CA5ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A055720029733B89004CA5ED /* Localizable.strings */; };
+		A0CAFAD4297844E600CB149E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAD3297844E600CB149E /* LoginView.swift */; };
+		A0CAFAD6297849FC00CB149E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAD5297849FC00CB149E /* RegisterView.swift */; };
+		A0CAFAD829784B2F00CB149E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAD729784B2F00CB149E /* ForgotPasswordView.swift */; };
+		A0CAFADA29784CF300CB149E /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAD929784CF300CB149E /* RegistrationService.swift */; };
+		A0CAFADC29784E2800CB149E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFADB29784E2800CB149E /* RegistrationViewModel.swift */; };
+		A0CAFADE2978516B00CB149E /* UserSessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFADD2978516B00CB149E /* UserSessionDetails.swift */; };
+		A0CAFAE029785DA300CB149E /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFADF29785DA300CB149E /* LoginService.swift */; };
+		A0CAFAE229785DDD00CB149E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAE129785DDD00CB149E /* LoginViewModel.swift */; };
+		A0CAFAE42978629B00CB149E /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAE32978629B00CB149E /* ForgotPasswordService.swift */; };
+		A0CAFAE6297862DE00CB149E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CAFAE5297862DD00CB149E /* ForgotPasswordViewModel.swift */; };
 		A0D7ADB12973329400325721 /* OnBoarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D7ADB02973329400325721 /* OnBoarding1View.swift */; };
 		A0D7ADB32973341200325721 /* OnBoarding2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D7ADB22973341200325721 /* OnBoarding2View.swift */; };
 		A0D7ADB62973360000325721 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A0D7ADB52973360000325721 /* Lottie */; };
@@ -108,9 +124,20 @@
 		337F0BDA29743D860030883E /* SettingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
 		337F0BDB29743D860030883E /* ContactUS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUS.swift; sourceTree = "<group>"; };
 		337F0BDF29743E020030883E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A04F97D02977100E00808C3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coinsViewlist.swift; sourceTree = "<group>"; };
 		A05571FF29733B89004CA5ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A055720129733B8B004CA5ED /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A0CAFAD3297844E600CB149E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A0CAFAD5297849FC00CB149E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A0CAFAD729784B2F00CB149E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		A0CAFAD929784CF300CB149E /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		A0CAFADB29784E2800CB149E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		A0CAFADD2978516B00CB149E /* UserSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDetails.swift; sourceTree = "<group>"; };
+		A0CAFADF29785DA300CB149E /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A0CAFAE129785DDD00CB149E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A0CAFAE32978629B00CB149E /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
+		A0CAFAE5297862DD00CB149E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		A0D7ADB02973329400325721 /* OnBoarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1View.swift; sourceTree = "<group>"; };
 		A0D7ADB22973341200325721 /* OnBoarding2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2View.swift; sourceTree = "<group>"; };
 		A0D7ADB72973362500325721 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -123,6 +150,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A004CB1629770ADC001B5294 /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				A004CB1429770ADC001B5294 /* FirebaseDatabase in Frameworks */,
+				A004CB0E29770ADC001B5294 /* FirebaseAnalytics in Frameworks */,
+				A004CB1229770ADC001B5294 /* FirebaseCrashlytics in Frameworks */,
+				A004CB1029770ADC001B5294 /* FirebaseAuth in Frameworks */,
 				A0D7ADB62973360000325721 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0274CD46264783B8008099B6 /* Assets.xcassets */,
+				A04F97D02977100E00808C3C /* GoogleService-Info.plist */,
 				A055720029733B89004CA5ED /* Localizable.strings */,
 				0274CD41264783B5008099B6 /* SwiftfulCrypto */,
 				0274CD40264783B5008099B6 /* Products */,
@@ -151,7 +184,16 @@
 		0274CD41264783B5008099B6 /* SwiftfulCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				A0CAFAE5297862DD00CB149E /* ForgotPasswordViewModel.swift */,
+				A0CAFAE129785DDD00CB149E /* LoginViewModel.swift */,
 				0274CD42264783B5008099B6 /* SwiftfulCryptoApp.swift */,
+				A0CAFAD3297844E600CB149E /* LoginView.swift */,
+				A0CAFAD5297849FC00CB149E /* RegisterView.swift */,
+				A0CAFADD2978516B00CB149E /* UserSessionDetails.swift */,
+				A0CAFAD929784CF300CB149E /* RegistrationService.swift */,
+				A0CAFADF29785DA300CB149E /* LoginService.swift */,
+				A0CAFADB29784E2800CB149E /* RegistrationViewModel.swift */,
+				A0CAFAD729784B2F00CB149E /* ForgotPasswordView.swift */,
 				A0D7ADB72973362500325721 /* LottieView.swift */,
 				A0D7ADBB2973370A00325721 /* 105300-crypto.json */,
 				A0D7ADB92973370100325721 /* 99448-crypto-coins.json */,
@@ -213,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0274CD5F26478CD7008099B6 /* HomeView.swift */,
+				A0CAFAE32978629B00CB149E /* ForgotPasswordService.swift */,
 				A0D7ADB02973329400325721 /* OnBoarding1View.swift */,
 				A0D7ADB22973341200325721 /* OnBoarding2View.swift */,
 				A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */,
@@ -375,6 +418,7 @@
 				0274CD3B264783B5008099B6 /* Sources */,
 				0274CD3C264783B5008099B6 /* Frameworks */,
 				0274CD3D264783B5008099B6 /* Resources */,
+				A04F97D22977135900808C3C /* Crashlytics Run Script */,
 			);
 			buildRules = (
 			);
@@ -383,6 +427,11 @@
 			name = SwiftfulCrypto;
 			packageProductDependencies = (
 				A0D7ADB52973360000325721 /* Lottie */,
+				A004CB0D29770ADC001B5294 /* FirebaseAnalytics */,
+				A004CB0F29770ADC001B5294 /* FirebaseAuth */,
+				A004CB1129770ADC001B5294 /* FirebaseCrashlytics */,
+				A004CB1329770ADC001B5294 /* FirebaseDatabase */,
+				A004CB1529770ADC001B5294 /* FirebaseDatabaseSwift-Beta */,
 			);
 			productName = SwiftfulCrypto;
 			productReference = 0274CD3F264783B5008099B6 /* IntoCrypto.app */;
@@ -414,6 +463,7 @@
 			mainGroup = 0274CD36264783B5008099B6;
 			packageReferences = (
 				A0D7ADB42973360000325721 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 0274CD40264783B5008099B6 /* Products */;
 			projectDirPath = "";
@@ -435,10 +485,33 @@
 				A0D7ADBC2973370A00325721 /* 105300-crypto.json in Resources */,
 				0274CD4A264783B8008099B6 /* Preview Assets.xcassets in Resources */,
 				0274CD47264783B8008099B6 /* Assets.xcassets in Resources */,
+				A04F97D12977100E00808C3C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A04F97D22977135900808C3C /* Crashlytics Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Crashlytics Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0274CD3B264783B5008099B6 /* Sources */ = {
@@ -449,8 +522,11 @@
 				0274CDA42648AD21008099B6 /* StatisticModel.swift in Sources */,
 				A0554C15296CB10E0052A8E3 /* coinsViewlist.swift in Sources */,
 				0274CD862647C333008099B6 /* CoinDataService.swift in Sources */,
+				A0CAFAD4297844E600CB149E /* LoginView.swift in Sources */,
 				0274CDE7264E156D008099B6 /* ChartView.swift in Sources */,
+				A0CAFAE6297862DE00CB149E /* ForgotPasswordViewModel.swift in Sources */,
 				0274CD712647A373008099B6 /* CoinRowView.swift in Sources */,
+				A0CAFAE229785DDD00CB149E /* LoginViewModel.swift in Sources */,
 				0274CDBB2648D5D2008099B6 /* XMarkButton.swift in Sources */,
 				0274CD7B2647B5A3008099B6 /* HomeViewModel.swift in Sources */,
 				0274CDEA264E2B29008099B6 /* Date.swift in Sources */,
@@ -464,19 +540,24 @@
 				337F0BE029743E020030883E /* Profile.swift in Sources */,
 				0274CD43264783B5008099B6 /* SwiftfulCryptoApp.swift in Sources */,
 				0274CDA026489F3A008099B6 /* UIApplication.swift in Sources */,
+				A0CAFADA29784CF300CB149E /* RegistrationService.swift in Sources */,
 				028E1C19264F784A00A4B420 /* LaunchView.swift in Sources */,
 				0274CD6626478E1E008099B6 /* CircleButtonView.swift in Sources */,
 				0274CD582647880E008099B6 /* Color.swift in Sources */,
+				A0CAFAD6297849FC00CB149E /* RegisterView.swift in Sources */,
 				337F0BDD29743D860030883E /* SettingsList.swift in Sources */,
 				0274CDD1264A480B008099B6 /* DetailView.swift in Sources */,
+				A0CAFAE029785DA300CB149E /* LoginService.swift in Sources */,
 				0274CDCA264A372F008099B6 /* HapticManager.swift in Sources */,
 				0274CD9C26489943008099B6 /* SearchBarView.swift in Sources */,
 				0274CD8A2647CEF2008099B6 /* NetworkingManager.swift in Sources */,
 				A0D7ADB12973329400325721 /* OnBoarding1View.swift in Sources */,
 				0274CDBF2648D7D1008099B6 /* CoinLogoView.swift in Sources */,
+				A0CAFADE2978516B00CB149E /* UserSessionDetails.swift in Sources */,
 				0274CDAD2648B2C6008099B6 /* HomeStatsView.swift in Sources */,
 				0274CDB42648C1BA008099B6 /* MarketDataService.swift in Sources */,
 				0274CD6926479164008099B6 /* CircleButtonAnimationView.swift in Sources */,
+				A0CAFAD829784B2F00CB149E /* ForgotPasswordView.swift in Sources */,
 				0274CD952647DBF7008099B6 /* CoinImageViewModel.swift in Sources */,
 				028E1C0A264F606E00A4B420 /* String.swift in Sources */,
 				0274CD742647A420008099B6 /* PreviewProvider.swift in Sources */,
@@ -486,8 +567,10 @@
 				0274CDD4264A6094008099B6 /* CoinDetailModel.swift in Sources */,
 				337F0BDE29743D860030883E /* ContactUS.swift in Sources */,
 				0274CD6E264795C5008099B6 /* CoinModel.swift in Sources */,
+				A0CAFADC29784E2800CB149E /* RegistrationViewModel.swift in Sources */,
 				0274CDDB264A6348008099B6 /* CoinDetailDataService.swift in Sources */,
 				0274CDD8264A6314008099B6 /* DetailViewModel.swift in Sources */,
+				A0CAFAE42978629B00CB149E /* ForgotPasswordService.swift in Sources */,
 				0274CDC6264A1D9D008099B6 /* PortfolioDataService.swift in Sources */,
 				028E1C0F264F6B1200A4B420 /* SettingsView.swift in Sources */,
 			);
@@ -563,6 +646,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -617,6 +701,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -630,8 +715,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulCrypto/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6ADLC37UA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
@@ -640,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamehere.SwiftfulCrypto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IntoCrypto.SwiftfulCrypto;
 				PRODUCT_NAME = IntoCrypto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -657,7 +743,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulCrypto/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6ADLC37UA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
@@ -666,7 +752,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamehere.SwiftfulCrypto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.IntoCrypto.SwiftfulCrypto;
 				PRODUCT_NAME = IntoCrypto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -700,6 +786,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.10.0;
+			};
+		};
 		A0D7ADB42973360000325721 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -711,6 +805,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A004CB0D29770ADC001B5294 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A004CB0F29770ADC001B5294 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A004CB1129770ADC001B5294 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		A004CB1329770ADC001B5294 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A004CB1529770ADC001B5294 /* FirebaseDatabaseSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A004CB0C29770ADC001B5294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseDatabaseSwift-Beta";
+		};
 		A0D7ADB52973360000325721 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A0D7ADB42973360000325721 /* XCRemoteSwiftPackageReference "lottie-ios" */;

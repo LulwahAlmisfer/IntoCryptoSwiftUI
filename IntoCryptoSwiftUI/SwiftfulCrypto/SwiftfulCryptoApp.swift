@@ -6,13 +6,27 @@
 //
 
 import SwiftUI
+import Firebase
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+      
+   
+    return true
+  }
+}
+
 
 @main
 struct SwiftfulCryptoApp: App {
     
     @StateObject private var vm = HomeViewModel()
     @State private var showLaunchView: Bool = true
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var sessionService = SessionServiceImpl()
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(Color.theme.accent)]
@@ -24,8 +38,16 @@ struct SwiftfulCryptoApp: App {
         WindowGroup {
             ZStack {
                 NavigationView {
-                    HomeView()
-                        .navigationBarHidden(true)
+                    switch sessionService.state {
+                        case .loggedIn:
+                            HomeView()
+                                .environmentObject(sessionService)
+                                .navigationBarHidden(true)
+                        case .loggedOut:
+                            LoginView()
+                        }
+                    //HomeView()
+                      //  .navigationBarHidden(true)
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
                 .environmentObject(vm)

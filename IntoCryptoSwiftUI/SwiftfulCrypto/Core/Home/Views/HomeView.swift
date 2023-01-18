@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @EnvironmentObject var service: SessionServiceImpl
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // animate right
     @State private var showPortfolioView: Bool = false // new sheet
@@ -29,6 +29,13 @@ struct HomeView: View {
             
             // content layer
             VStack {
+                
+                ButtonView(title: "logOut") {
+                    service.logout()
+                }
+                
+                Text("first name :\(service.userDetails?.Name ?? "temp")" )
+                
                 if selector != 3{
                     homeHeader}
                 if selector == 1 {
@@ -104,6 +111,7 @@ struct HomeView_Previews: PreviewProvider {
                 .navigationBarHidden(true)
         }
         .environmentObject(dev.homeVM)
+        .environmentObject(SessionServiceImpl())
     }
 }
 
