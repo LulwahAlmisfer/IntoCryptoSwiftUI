@@ -18,27 +18,45 @@ struct LoginView: View {
     var body: some View {
         
         VStack(spacing: 16) {
-            
-            VStack(spacing: 16) {
+            Spacer()
+            Text("Log In")
+                .foregroundColor(Color("SecondMainColor"))
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            VStack {
                 
                 InputTextFieldView(text:  $viewModel.credentials.email,
                                    placeholder: "Email",
                                    keyboardType: .emailAddress,
                                    systemImage: "envelope")
+                .font(.title3)
+                .background(Color.black.opacity(0.05))
+                .padding(2)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(50)
+                .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+               // .padding(.vertical)
                 
                 InputPasswordView(password: $viewModel.credentials.password,
                                   placeholder: "Password",
                                   systemImage: "lock")
-            }
-            
-            HStack {
-                Spacer()
+                .font(.title3)
+                .background(Color.black.opacity(0.05))
+                .padding(2)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(50)
+                .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                            }
+            .padding(.vertical)
+
+            VStack {
+                //Spacer()
                 Button(action: {
                     showForgotPassword.toggle()
                 }, label: {
                     Text("Forgot Password?")
                 })
-                .font(.system(size: 16, weight: .bold))
+                .font(.system(size: 16, weight: .semibold))
                 .sheet(isPresented: $showForgotPassword) {
                         ForgotPasswordView()
                 }
@@ -52,17 +70,20 @@ struct LoginView: View {
                 
                 ButtonView(title: "Register",
                            background: .clear,
-                           foreground: .blue,
-                           border: .blue) {
+                           foreground: .primary,
+                           border: .primary) {
                     showRegistration.toggle()
                 }
+                           
                 .sheet(isPresented: $showRegistration) {
                         RegisterView()
                 }
             }
+            Spacer()
+            
         }
         .padding(.horizontal, 15)
-        .navigationTitle("Login")
+        //.navigationTitle("Login")
         .alert(isPresented: $viewModel.hasError,
                content: {
                 
@@ -75,8 +96,11 @@ struct LoginView: View {
                         title: Text("Error"),
                         message: Text("Something went wrong"))
                 }
+        
          })
+        
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
@@ -99,7 +123,7 @@ struct ButtonView: View {
    private let cornerRadius: CGFloat = 10
    
    internal init(title: String,
-                 background: Color = .blue,
+                 background: Color = .primary,
                  foreground: Color = .white,
                  border: Color = .clear,
                  handler: @escaping ButtonView.ActionHandler) {
@@ -118,13 +142,16 @@ struct ButtonView: View {
            Text(title)
                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 50)
        })
+       .padding(5)
+       
        .background(background)
        .foregroundColor(foreground)
        .font(.system(size: 16, weight: .bold))
-       .cornerRadius(cornerRadius)
+       .cornerRadius(40)
        .overlay(
-           RoundedRectangle(cornerRadius: cornerRadius)
+           RoundedRectangle(cornerRadius: 40)
                .stroke(border, lineWidth: 2)
+               
        )
    }
 }
@@ -164,10 +191,10 @@ struct InputTextFieldView: View {
                                .padding(.leading, 5)
                                .foregroundColor(Color.gray.opacity(0.5))
                        }
-                       
-                       RoundedRectangle(cornerRadius: 10,
+                           
+                       RoundedRectangle(cornerRadius: 40,
                                         style: .continuous)
-                           .stroke(Color.gray.opacity(0.25), lineWidth: 1)
+                           .stroke(Color.gray.opacity(0.05), lineWidth: 2)
                    }
                )
        }
