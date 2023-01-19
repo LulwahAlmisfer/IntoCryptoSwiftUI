@@ -20,9 +20,9 @@ struct LoginView: View {
         VStack(spacing: 16) {
             Spacer()
             Text("Log In")
+                .font(.system(size: 55, weight: .bold))
                 .foregroundColor(Color("SecondMainColor"))
-                .font(.largeTitle)
-                .fontWeight(.bold)
+                .padding()
             VStack {
                 
                 InputTextFieldView(text:  $viewModel.credentials.email,
