@@ -20,7 +20,7 @@ struct LoginView: View {
         VStack(spacing: 16) {
             Spacer()
             Text("Log In")
-                .font(.system(size: 55, weight: .bold))
+                .font(.system(size: 50, weight: .bold))
                 .foregroundColor(Color("SecondMainColor"))
                 .padding()
             VStack {

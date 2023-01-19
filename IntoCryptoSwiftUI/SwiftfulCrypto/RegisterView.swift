@@ -18,7 +18,7 @@ struct RegisterView: View {
                 
                 VStack(spacing: 16) {
                     Text("Register")
-                        .font(.system(size: 55, weight: .bold))
+                        .font(.system(size: 50, weight: .bold))
                         .padding()
                         .foregroundColor(Color("SecondMainColor"))
                     InputTextFieldView(text: $viewModel.newUser.email,
