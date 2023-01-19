@@ -66,6 +66,7 @@ struct LoginView: View {
                 
                 ButtonView(title: "Login") {
                     viewModel.login()
+                    
                 }
                 
                 ButtonView(title: "Register",

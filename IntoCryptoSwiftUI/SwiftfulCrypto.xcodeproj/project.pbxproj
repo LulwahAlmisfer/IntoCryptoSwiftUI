@@ -184,9 +184,9 @@
 		0274CD41264783B5008099B6 /* SwiftfulCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				0274CD42264783B5008099B6 /* SwiftfulCryptoApp.swift */,
 				A0CAFAE5297862DD00CB149E /* ForgotPasswordViewModel.swift */,
 				A0CAFAE129785DDD00CB149E /* LoginViewModel.swift */,
-				0274CD42264783B5008099B6 /* SwiftfulCryptoApp.swift */,
 				A0CAFAD3297844E600CB149E /* LoginView.swift */,
 				A0CAFAD5297849FC00CB149E /* RegisterView.swift */,
 				A0CAFADD2978516B00CB149E /* UserSessionDetails.swift */,
@@ -721,7 +721,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,7 +747,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
