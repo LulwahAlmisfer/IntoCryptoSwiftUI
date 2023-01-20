@@ -35,7 +35,7 @@ struct LoginView: View {
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
-                .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
+               .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
                // .padding(.vertical)
                 
                 InputPasswordView(password: $viewModel.credentials.password,

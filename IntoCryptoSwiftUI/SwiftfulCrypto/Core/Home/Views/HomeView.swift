@@ -30,11 +30,11 @@ struct HomeView: View {
             // content layer
             VStack {
                 
-                ButtonView(title: "logOut") {
-                    service.logout()
-                }
+              //  ButtonView(title: "logOut") {
+               //     service.logout()
+               // }
                 
-                Text("first name :\(service.userDetails?.Name ?? "temp")" )
+             //   Text("first name :\(service.userDetails?.Name ?? //"temp")" )
                 
                 if selector != 3{
                     homeHeader}

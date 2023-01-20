@@ -9,9 +9,10 @@ import SwiftUI
 
 struct Profile: View {
     
- 
+    @EnvironmentObject var service: SessionServiceImpl
+   // @EnvironmentObject private var vm: HomeViewModel
     @State var selector = 1
-    
+    @State private var showRegistration = false
     
     var body: some View {
         //VStack Containing all items
@@ -26,8 +27,10 @@ struct Profile: View {
                      .frame(width: 100, height: 100,alignment: .center)
                      .padding(.top,30)
                      .foregroundColor(Color("SecondMainColor"))
-                   
-                 Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+                 
+               //  Text(" \(service.userDetails?.Name ?? "temp")" ).font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+                 
+                // Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
              }
              //-----------------------------------------------------------//
       //ZStack with calling class SettingsList
@@ -39,12 +42,13 @@ struct Profile: View {
           
              //ZStack with calling class SettingsList
              VStack{
-                 Button("Logout", action: {
-                   print("عدلوه")
-                 }).padding(.bottom,35)
-                     .foregroundColor(.red)
-                     .bold()
-                 
+                 ButtonView(title: "Log Out" ,
+                            background: .clear,
+                            foreground: .red) {
+                     service.logout()
+                 }
+                     
+
                  Text("Contact us").font(.system(size: 15)).fontWeight(.semibold)
              
                  ContactUS()
