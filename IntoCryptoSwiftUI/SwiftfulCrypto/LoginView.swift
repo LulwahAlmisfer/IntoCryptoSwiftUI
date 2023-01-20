@@ -24,14 +24,14 @@ struct LoginView: View {
                 .foregroundColor(Color("SecondMainColor"))
                 .padding()
             VStack {
-                
+                //email and password
                 InputTextFieldView(text:  $viewModel.credentials.email,
                                    placeholder: "Email",
                                    keyboardType: .emailAddress,
                                    systemImage: "envelope")
                 .font(.title3)
                 .background(Color.theme.accent.opacity(0.05))
-                
+                .foregroundColor(Color.secondary)
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
@@ -43,6 +43,7 @@ struct LoginView: View {
                                   systemImage: "lock")
                 .font(.title3)
                 .background(Color.theme.accent.opacity(0.05))
+                .foregroundColor(Color.secondary)
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
@@ -174,16 +175,17 @@ struct InputTextFieldView: View {
    var body: some View {
        
        VStack {
-           
+           //email textfield
            TextField(placeholder, text: $text)
                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,
                       minHeight: 44,
                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                .padding(.leading, systemImage == nil ? textFieldLeading / 2 : textFieldLeading)
                .keyboardType(keyboardType)
-               .background(Color.theme.background.opacity(0.05))
+               .background(Color.theme.accent.opacity(0.200))
+              
                .background(
-                   
+                   //image email
                    ZStack(alignment: .leading) {
                        
                        if let systemImage = systemImage {
@@ -191,12 +193,13 @@ struct InputTextFieldView: View {
                            Image(systemName: systemImage)
                                .font(.system(size: 16, weight: .semibold))
                                .padding(.leading, 5)
-                               //.foregroundColor(Color.accentColor.opacity(0.5))
+                               
                        }
                            
                        RoundedRectangle(cornerRadius: 40,
                                         style: .continuous)
                            .stroke(Color.accentColor.opacity(0.05), lineWidth: 2)
+                           
                    }
                )
        }
@@ -215,12 +218,13 @@ struct InputPasswordView: View {
    var body: some View {
        
        VStack {
-           
+           //password textfield
            SecureField(placeholder, text: $password)
                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,
                       minHeight: 44,
                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                .padding(.leading, systemImage == nil ? textFieldLeading / 2 : textFieldLeading)
+               .background(Color.theme.accent.opacity(0.200))
                .background(
                    
                    ZStack(alignment: .leading) {
