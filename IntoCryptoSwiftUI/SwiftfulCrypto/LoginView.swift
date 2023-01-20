@@ -35,7 +35,7 @@ struct LoginView: View {
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
-               .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
+               .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                // .padding(.vertical)
                 
                 InputPasswordView(password: $viewModel.credentials.password,
@@ -47,7 +47,7 @@ struct LoginView: View {
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
-                .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                             }
             .padding(.vertical)
 
@@ -182,7 +182,7 @@ struct InputTextFieldView: View {
                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                .padding(.leading, systemImage == nil ? textFieldLeading / 2 : textFieldLeading)
                .keyboardType(keyboardType)
-               .background(Color.theme.accent.opacity(0.200))
+               .background(Color.theme.secondaryText.opacity(0.3))
               
                .background(
                    //image email
@@ -224,7 +224,7 @@ struct InputPasswordView: View {
                       minHeight: 44,
                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                .padding(.leading, systemImage == nil ? textFieldLeading / 2 : textFieldLeading)
-               .background(Color.theme.accent.opacity(0.200))
+               .background(Color.theme.secondaryText.opacity(0.3))
                .background(
                    
                    ZStack(alignment: .leading) {
@@ -237,9 +237,9 @@ struct InputPasswordView: View {
                                //.foregroundColor(Color.accentColor.opacity(0.5))
                        }
                        
-                       RoundedRectangle(cornerRadius: 10,
+                       RoundedRectangle(cornerRadius: 40,
                                         style: .continuous)
-                           .stroke(Color.accentColor.opacity(0.25), lineWidth: 1)
+                           .stroke(Color.accentColor.opacity(0.05), lineWidth: 2)
                    }
                )
        }
