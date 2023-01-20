@@ -30,22 +30,23 @@ struct LoginView: View {
                                    keyboardType: .emailAddress,
                                    systemImage: "envelope")
                 .font(.title3)
-                .background(Color.black.opacity(0.05))
+                .background(Color.theme.accent.opacity(0.05))
+                
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
-                .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
                // .padding(.vertical)
                 
                 InputPasswordView(password: $viewModel.credentials.password,
                                   placeholder: "Password",
                                   systemImage: "lock")
                 .font(.title3)
-                .background(Color.black.opacity(0.05))
+                .background(Color.theme.accent.opacity(0.05))
                 .padding(2)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(50)
-                .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                .shadow(color: Color.accentColor.opacity(0.05), radius: 60, x: 0.0, y: 16)
                             }
             .padding(.vertical)
 
@@ -124,8 +125,8 @@ struct ButtonView: View {
    private let cornerRadius: CGFloat = 10
    
    internal init(title: String,
-                 background: Color = .primary,
-                 foreground: Color = .white,
+                 background: Color = .theme.accent,
+                 foreground: Color = .theme.background,
                  border: Color = .clear,
                  handler: @escaping ButtonView.ActionHandler) {
        self.title = title
@@ -144,7 +145,6 @@ struct ButtonView: View {
                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 50)
        })
        .padding(5)
-       
        .background(background)
        .foregroundColor(foreground)
        .font(.system(size: 16, weight: .bold))
@@ -181,6 +181,7 @@ struct InputTextFieldView: View {
                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                .padding(.leading, systemImage == nil ? textFieldLeading / 2 : textFieldLeading)
                .keyboardType(keyboardType)
+               .background(Color.theme.background.opacity(0.05))
                .background(
                    
                    ZStack(alignment: .leading) {
@@ -190,12 +191,12 @@ struct InputTextFieldView: View {
                            Image(systemName: systemImage)
                                .font(.system(size: 16, weight: .semibold))
                                .padding(.leading, 5)
-                               .foregroundColor(Color.gray.opacity(0.5))
+                               //.foregroundColor(Color.accentColor.opacity(0.5))
                        }
                            
                        RoundedRectangle(cornerRadius: 40,
                                         style: .continuous)
-                           .stroke(Color.gray.opacity(0.05), lineWidth: 2)
+                           .stroke(Color.accentColor.opacity(0.05), lineWidth: 2)
                    }
                )
        }
@@ -207,6 +208,7 @@ struct InputPasswordView: View {
    @Binding var password: String
    let placeholder: String
    let systemImage: String?
+    
    
    private let textFieldLeading: CGFloat = 30
    
@@ -228,12 +230,12 @@ struct InputPasswordView: View {
                            Image(systemName: systemImage)
                                .font(.system(size: 16, weight: .semibold))
                                .padding(.leading, 5)
-                               .foregroundColor(Color.gray.opacity(0.5))
+                               //.foregroundColor(Color.accentColor.opacity(0.5))
                        }
                        
                        RoundedRectangle(cornerRadius: 10,
                                         style: .continuous)
-                           .stroke(Color.gray.opacity(0.25), lineWidth: 1)
+                           .stroke(Color.accentColor.opacity(0.25), lineWidth: 1)
                    }
                )
        }
