@@ -51,6 +51,7 @@
 		337F0BDD29743D860030883E /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDA29743D860030883E /* SettingsList.swift */; };
 		337F0BDE29743D860030883E /* ContactUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDB29743D860030883E /* ContactUS.swift */; };
 		337F0BE029743E020030883E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDF29743E020030883E /* Profile.swift */; };
+		5DC2206C297DAEC90049581E /* changelanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC2206B297DAEC90049581E /* changelanguage.swift */; };
 		A004CB0E29770ADC001B5294 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0D29770ADC001B5294 /* FirebaseAnalytics */; };
 		A004CB1029770ADC001B5294 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0F29770ADC001B5294 /* FirebaseAuth */; };
 		A004CB1229770ADC001B5294 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB1129770ADC001B5294 /* FirebaseCrashlytics */; };
@@ -124,6 +125,7 @@
 		337F0BDA29743D860030883E /* SettingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
 		337F0BDB29743D860030883E /* ContactUS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUS.swift; sourceTree = "<group>"; };
 		337F0BDF29743E020030883E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5DC2206B297DAEC90049581E /* changelanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changelanguage.swift; sourceTree = "<group>"; };
 		A04F97D02977100E00808C3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coinsViewlist.swift; sourceTree = "<group>"; };
 		A05571FF29733B89004CA5ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				337F0BDF29743E020030883E /* Profile.swift */,
+				5DC2206B297DAEC90049581E /* changelanguage.swift */,
 				337F0BDA29743D860030883E /* SettingsList.swift */,
 				337F0BDB29743D860030883E /* ContactUS.swift */,
 			);
@@ -543,6 +546,7 @@
 				A0CAFADA29784CF300CB149E /* RegistrationService.swift in Sources */,
 				028E1C19264F784A00A4B420 /* LaunchView.swift in Sources */,
 				0274CD6626478E1E008099B6 /* CircleButtonView.swift in Sources */,
+				5DC2206C297DAEC90049581E /* changelanguage.swift in Sources */,
 				0274CD582647880E008099B6 /* Color.swift in Sources */,
 				A0CAFAD6297849FC00CB149E /* RegisterView.swift in Sources */,
 				337F0BDD29743D860030883E /* SettingsList.swift in Sources */,
@@ -721,7 +725,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,7 +751,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftfulCrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IntoCrypto;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

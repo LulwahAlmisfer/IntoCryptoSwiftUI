@@ -6,18 +6,30 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct Profile: View {
     
     @EnvironmentObject var service: SessionServiceImpl
    // @EnvironmentObject private var vm: HomeViewModel
     @State var selector = 1
-    @State private var showRegistration = false
-    
+   // @State private var showRegistration = false
+    //@State private var showDetailView: Bool = false
     var body: some View {
+     
+    
         //VStack Containing all items
          VStack{
-             
+             Button(action: Helper.goToAppSetting) {
+                 HStack {
+                     Image(systemName: "globe")
+                         .resizable()
+                         .frame(width: 30, height: 30)
+                         .foregroundColor(Color("SecondMainColor"))
+                     Spacer()
+                 }
+                 .padding(.horizontal)
+             }
        //VStack for the Profile Image and Name
              
              VStack{
@@ -28,7 +40,9 @@ struct Profile: View {
                      .padding(.top,30)
                      .foregroundColor(Color("SecondMainColor"))
                  
-               //  Text(" \(service.userDetails?.Name ?? "temp")" ).font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+            
+               // Text(" \(service.userDetails?.Name ?? "temp")" )
+                     //.font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
                  
                 // Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
              }
@@ -57,10 +71,21 @@ struct Profile: View {
         
 
          }.background(Color("MainColor"))
-
+        
+       
     }
+    
       
          }
+struct Helper {
+    static func goToAppSetting() {
+        DispatchQueue.main.async {
+            if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
+                UIApplication.shared.open(appSettings)
+            }
+        }
+    }
+}
 
 
 struct Profile_Previews: PreviewProvider {
