@@ -19,7 +19,7 @@ struct OnBoarding1View: View {
                         HStack {
                             Image(systemName: "globe")
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 25, height: 25)
                                 .foregroundColor(Color("SecondMainColor"))
                         }   
                     }

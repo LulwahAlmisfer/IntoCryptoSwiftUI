@@ -34,6 +34,7 @@ struct SwiftfulCryptoApp: App {
         UITableView.appearance().backgroundColor = UIColor.clear
     }
     
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -60,6 +61,9 @@ struct SwiftfulCryptoApp: App {
 //                }
 //                .zIndex(2.0)
             }
+            .preferredColorScheme(isDarkMode ? .dark : .light)
+
         }
+        
     }
 }

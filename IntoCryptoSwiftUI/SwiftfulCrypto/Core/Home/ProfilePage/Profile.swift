@@ -5,78 +5,139 @@
 //  Created by Han on 15/01/2023.
 //
 
+
 import SwiftUI
-import Foundation
 
 struct Profile: View {
     
-    @EnvironmentObject var service: SessionServiceImpl
-   // @EnvironmentObject private var vm: HomeViewModel
-    @State var selector = 1
-   // @State private var showRegistration = false
-    //@State private var showDetailView: Bool = false
-    var body: some View {
-     
+    @State private var Toggling = false
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+  
     
-        //VStack Containing all items
-         VStack{
-             Button(action: Helper.goToAppSetting) {
+    var body: some View {
+        NavigationView{
+            //VStack Containing all items
+            VStack{
+                //VStack for the Profile Image and Name
+                Button(action: Helper.goToAppSetting) {
                  HStack {
                      Image(systemName: "globe")
                          .resizable()
-                         .frame(width: 30, height: 30)
+                         .frame(width: 25, height: 25)
                          .foregroundColor(Color("SecondMainColor"))
                      Spacer()
                  }
-                 .padding(.horizontal)
-             }
-       //VStack for the Profile Image and Name
-             
-             VStack{
-
-                 Image(systemName: "person.crop.circle.fill")
-                     .resizable()
-                     .frame(width: 100, height: 100,alignment: .center)
-                     .padding(.top,30)
-                     .foregroundColor(Color("SecondMainColor"))
-                 
-            
-               // Text(" \(service.userDetails?.Name ?? "temp")" )
-                     //.font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
-                 
-                // Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
-             }
-             //-----------------------------------------------------------//
-      //ZStack with calling class SettingsList
-             
-             ZStack{
-                 SettingsList()
-             }
-              
+                 .padding(.horizontal,30)
+                }
+                VStack{
+                    
+                    
+                    Image(systemName: "person.crop.circle.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100,alignment: .center)
+                        .padding(.top,30)
+                        .foregroundColor(Color("SecondMainColor"))
+                    
+                    
+                    Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+                }
+                //-----------------------------------------------------------//
+                //ZStack with calling class SettingsList
+                
           
-             //ZStack with calling class SettingsList
-             VStack{
-                 ButtonView(title: "Log Out" ,
-                            background: .clear,
-                            foreground: .red) {
-                     service.logout()
-                 }
-                     
-
-                 Text("Contact us").font(.system(size: 15)).fontWeight(.semibold)
+                    
+                    List {
+                        Section(header: Text("Settings")){
+                            
+                            NavigationLink(destination: Account(), label: {
+                                Text("Account")
+                            }).foregroundColor(Color("MainColor"))
+                                .listRowBackground(Color("SecondMainColor"))
+                            
              
-                 ContactUS()
-             }.aspectRatio(contentMode: .fit).padding(.bottom,100)
-             
-        
-
-         }.background(Color("MainColor"))
-        
-       
-    }
-    
-      
+                            
+                            //Leave a review
+                            Link(destination: URL(string: "https://www.apple.com/sa/app-store/")!){
+                                
+                                HStack{
+                                    
+                                    
+                                    Text("Terms and Conditions")
+                                    Spacer()
+                                    Image(systemName: "link")
+                                    
+                                    
+                                }
+                            }.foregroundColor(Color("MainColor"))
+                                .listRowBackground(Color("SecondMainColor"))
+                            
+                            //Terms and conditions
+                            
+                            Link(destination: URL(string: "https://www.apple.com/sa/app-store/")!){
+                                
+                                HStack{
+                                    
+                                    
+                                    Text("Leave a Review")
+                                    Spacer()
+                                    Image(systemName: "link")
+                                    
+                                    
+                                }
+                                
+                            }.foregroundColor(Color("MainColor"))
+                                .listRowBackground(Color("SecondMainColor"))
+                            
+                         
+                                
+                         
+                            //Dark Mode
+                       
+                                
+                                HStack{
+                               
+                                    
+                                    Toggle("Dark Mode",isOn: $isDarkMode)
+                                         .foregroundColor(Color("MainColor"))
+                                               
+            
+                                
+                            }.foregroundColor(Color("MainColor"))
+                                .listRowBackground(Color("SecondMainColor"))
+                            
+                            
+                        }
+                        
+                    }.scrollDisabled(true)
+                     .background(Color("MainColor"))
+                     .scrollContentBackground(.hidden)
+                    
+                    
+                    
+                    
+                    //ZStack with calling class SettingsList
+                    VStack{
+                        Button("Logout", action: {
+                            print("عدلوه")
+                        }).padding(.bottom,35)
+                            .foregroundColor(.red)
+                            .bold()
+                        
+                        Text("Contact us").font(.system(size: 15)).fontWeight(.semibold)
+                        
+                        ContactUS()
+                    }.aspectRatio(contentMode: .fit).padding(.bottom,100)
+                    
+                    
+                    
+                }.background(Color("MainColor"))
+                
+            }
+        }
          }
+
+
+
 struct Helper {
     static func goToAppSetting() {
         DispatchQueue.main.async {
@@ -89,6 +150,7 @@ struct Helper {
 
 
 struct Profile_Previews: PreviewProvider {
+    
     static var previews: some View {
         Profile()
     }

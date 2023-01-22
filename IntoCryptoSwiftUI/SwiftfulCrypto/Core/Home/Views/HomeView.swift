@@ -279,6 +279,7 @@ struct tab : View{
             OnBoarding2View(shouldshowonb: $shouldshowonb)
         }.tabViewStyle(PageTabViewStyle())
         }.ignoresSafeArea()
+        
     }
     
 }

@@ -48,9 +48,9 @@
 		028E1C0F264F6B1200A4B420 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E1C0E264F6B1200A4B420 /* SettingsView.swift */; };
 		028E1C15264F767C00A4B420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028E1C14264F767C00A4B420 /* LaunchScreen.storyboard */; };
 		028E1C19264F784A00A4B420 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E1C18264F784A00A4B420 /* LaunchView.swift */; };
-		337F0BDD29743D860030883E /* SettingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDA29743D860030883E /* SettingsList.swift */; };
 		337F0BDE29743D860030883E /* ContactUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDB29743D860030883E /* ContactUS.swift */; };
 		337F0BE029743E020030883E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0BDF29743E020030883E /* Profile.swift */; };
+		339C4690297DE087005F11EB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339C468F297DE087005F11EB /* Account.swift */; };
 		A004CB0E29770ADC001B5294 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0D29770ADC001B5294 /* FirebaseAnalytics */; };
 		A004CB1029770ADC001B5294 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB0F29770ADC001B5294 /* FirebaseAuth */; };
 		A004CB1229770ADC001B5294 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A004CB1129770ADC001B5294 /* FirebaseCrashlytics */; };
@@ -121,9 +121,9 @@
 		028E1C0E264F6B1200A4B420 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		028E1C14264F767C00A4B420 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028E1C18264F784A00A4B420 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		337F0BDA29743D860030883E /* SettingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsList.swift; sourceTree = "<group>"; };
 		337F0BDB29743D860030883E /* ContactUS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUS.swift; sourceTree = "<group>"; };
 		337F0BDF29743E020030883E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		339C468F297DE087005F11EB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A04F97D02977100E00808C3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0554C14296CB10E0052A8E3 /* coinsViewlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coinsViewlist.swift; sourceTree = "<group>"; };
 		A05571FF29733B89004CA5ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				337F0BDF29743E020030883E /* Profile.swift */,
-				337F0BDA29743D860030883E /* SettingsList.swift */,
+				339C468F297DE087005F11EB /* Account.swift */,
 				337F0BDB29743D860030883E /* ContactUS.swift */,
 			);
 			path = ProfilePage;
@@ -531,6 +531,7 @@
 				0274CD7B2647B5A3008099B6 /* HomeViewModel.swift in Sources */,
 				0274CDEA264E2B29008099B6 /* Date.swift in Sources */,
 				0274CD99264885B7008099B6 /* LocalFileManager.swift in Sources */,
+				339C4690297DE087005F11EB /* Account.swift in Sources */,
 				0274CDB12648BCEC008099B6 /* MarketDataModel.swift in Sources */,
 				A0D7ADB82973362500325721 /* LottieView.swift in Sources */,
 				0274CD6026478CD7008099B6 /* HomeView.swift in Sources */,
@@ -545,7 +546,6 @@
 				0274CD6626478E1E008099B6 /* CircleButtonView.swift in Sources */,
 				0274CD582647880E008099B6 /* Color.swift in Sources */,
 				A0CAFAD6297849FC00CB149E /* RegisterView.swift in Sources */,
-				337F0BDD29743D860030883E /* SettingsList.swift in Sources */,
 				0274CDD1264A480B008099B6 /* DetailView.swift in Sources */,
 				A0CAFAE029785DA300CB149E /* LoginService.swift in Sources */,
 				0274CDCA264A372F008099B6 /* HapticManager.swift in Sources */,
