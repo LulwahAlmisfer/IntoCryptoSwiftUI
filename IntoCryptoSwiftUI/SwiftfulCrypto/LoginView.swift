@@ -17,90 +17,93 @@ struct LoginView: View {
 
     var body: some View {
         
-        VStack(spacing: 16) {
-            Spacer()
-            Text("Log In")
-                .font(.system(size: 50, weight: .bold))
-                .foregroundColor(Color("SecondMainColor"))
-                .padding()
-            VStack {
-                //email and password
-                InputTextFieldView(text:  $viewModel.credentials.email,
-                                   placeholder: "Email",
-                                   keyboardType: .emailAddress,
-                                   systemImage: "envelope")
-                .font(.title3)
-                .background(Color.theme.accent.opacity(0.05))
-                .foregroundColor(Color.secondary)
-                .padding(2)
-                .frame(maxWidth: .infinity)
-                .cornerRadius(50)
-               .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
-               // .padding(.vertical)
-                
-                InputPasswordView(password: $viewModel.credentials.password,
-                                  placeholder: "Password",
-                                  systemImage: "lock")
-                .font(.title3)
-                .background(Color.theme.accent.opacity(0.05))
-                .foregroundColor(Color.secondary)
-                .padding(2)
-                .frame(maxWidth: .infinity)
-                .cornerRadius(50)
-                .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                            }
-            .padding(.vertical)
-
-            VStack {
-                //Spacer()
-                Button(action: {
-                    showForgotPassword.toggle()
-                }, label: {
-                    Text("Forgot Password?")
-                })
-                .font(.system(size: 16, weight: .semibold))
-                .sheet(isPresented: $showForgotPassword) {
-                        ForgotPasswordView()
-                }
-            }
-            
+        ZStack {
+            Color.theme.background.ignoresSafeArea()
             VStack(spacing: 16) {
-                
-                ButtonView(title: "Login") {
-                    viewModel.login()
+                Spacer()
+                Text("Log In")
+                    .font(.system(size: 50, weight: .bold))
+                    .foregroundColor(Color("SecondMainColor"))
+                    .padding()
+                VStack {
+                    //email and password
+                    InputTextFieldView(text:  $viewModel.credentials.email,
+                                       placeholder: "Email",
+                                       keyboardType: .emailAddress,
+                                       systemImage: "envelope")
+                    .font(.title3)
+                    .background(Color.theme.accent.opacity(0.05))
+                    .foregroundColor(Color.secondary)
+                    .padding(2)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(50)
+                   .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                   // .padding(.vertical)
                     
+                    InputPasswordView(password: $viewModel.credentials.password,
+                                      placeholder: "Password",
+                                      systemImage: "lock")
+                    .font(.title3)
+                    .background(Color.theme.accent.opacity(0.05))
+                    .foregroundColor(Color.secondary)
+                    .padding(2)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(50)
+                    .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                                }
+                .padding(.vertical)
+
+                VStack {
+                    //Spacer()
+                    Button(action: {
+                        showForgotPassword.toggle()
+                    }, label: {
+                        Text("Forgot Password?")
+                    })
+                    .font(.system(size: 16, weight: .semibold))
+                    .sheet(isPresented: $showForgotPassword) {
+                            ForgotPasswordView()
+                    }
                 }
                 
-                ButtonView(title: "Register",
-                           background: .clear,
-                           foreground: .primary,
-                           border: .primary) {
-                    showRegistration.toggle()
+                VStack(spacing: 16) {
+                    
+                    ButtonView(title: "Login") {
+                        viewModel.login()
+                        
+                    }
+                    
+                    ButtonView(title: "Register",
+                               background: .clear,
+                               foreground: .primary,
+                               border: .primary) {
+                        showRegistration.toggle()
+                    }
+                               
+                    .sheet(isPresented: $showRegistration) {
+                            RegisterView()
+                    }
                 }
-                           
-                .sheet(isPresented: $showRegistration) {
-                        RegisterView()
-                }
+                Spacer()
+                
             }
-            Spacer()
+            .padding(.horizontal, 15)
+            //.navigationTitle("Login")
+            .alert(isPresented: $viewModel.hasError,
+                   content: {
+                    
+                    if case .failed(let error) = viewModel.state {
+                        return Alert(
+                            title: Text("Error"),
+                            message: Text(error.localizedDescription))
+                    } else {
+                        return Alert(
+                            title: Text("Error"),
+                            message: Text("Something went wrong"))
+                    }
             
+        })
         }
-        .padding(.horizontal, 15)
-        //.navigationTitle("Login")
-        .alert(isPresented: $viewModel.hasError,
-               content: {
-                
-                if case .failed(let error) = viewModel.state {
-                    return Alert(
-                        title: Text("Error"),
-                        message: Text(error.localizedDescription))
-                } else {
-                    return Alert(
-                        title: Text("Error"),
-                        message: Text("Something went wrong"))
-                }
-        
-         })
         
     }
     

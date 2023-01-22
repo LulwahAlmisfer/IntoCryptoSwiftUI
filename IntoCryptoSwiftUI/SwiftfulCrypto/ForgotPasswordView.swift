@@ -12,21 +12,31 @@ struct ForgotPasswordView: View {
    @StateObject private var viewModel = ForgotPasswordViewModelImpl(
       service: ForgotPasswordServiceImpl())
     var body: some View {
-        VStack(spacing: 16) {
-        
-            InputTextFieldView(text:$viewModel.email,
-                               placeholder: "Email",
-                               keyboardType: .emailAddress,
-                               systemImage: "envelope")
+        ZStack {
+            Color.theme.background.ignoresSafeArea()
+            VStack(spacing: 16) {
             
-            ButtonView(title: "Send Password Reset") {
-                viewModel.sendPasswordResetRequest()
-                presentationMode.wrappedValue.dismiss()
+                InputTextFieldView(text:$viewModel.email,
+                                   placeholder: "Email",
+                                   keyboardType: .emailAddress,
+                                   systemImage: "envelope")
+                .font(.title3)
+                .background(Color.theme.accent.opacity(0.05))
+                .foregroundColor(Color.secondary)
+                .padding(2)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(50)
+               .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                
+                ButtonView(title: "Send Password Reset") {
+                    viewModel.sendPasswordResetRequest()
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
-        }
-        .padding(.horizontal, 15)
-        .navigationTitle("Reset Password")
+            .padding(.horizontal, 15)
+            .navigationTitle("Reset Password")
         .applyClose()
+        }
 }
 }
 

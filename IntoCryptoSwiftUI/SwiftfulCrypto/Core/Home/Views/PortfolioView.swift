@@ -17,12 +17,15 @@ struct PortfolioView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    SearchBarView(searchText: $vm.searchText)
-                    coinLogoList
-                    
-                    if selectedCoin != nil {
-                        portfolioInputSection
+                ZStack {
+                    Color.theme.background.ignoresSafeArea()
+                    VStack(alignment: .leading, spacing: 0) {
+                        SearchBarView(searchText: $vm.searchText)
+                        coinLogoList
+                        
+                        if selectedCoin != nil {
+                            portfolioInputSection
+                        }
                     }
                 }
             }

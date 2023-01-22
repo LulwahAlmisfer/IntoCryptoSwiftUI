@@ -14,68 +14,71 @@ struct RegisterView: View {
         
         NavigationView {
             
-            VStack(spacing: 32) {
-                
-                VStack(spacing: 16) {
-                    Text("Register")
-                        .font(.system(size: 50, weight: .bold))
-                        .padding()
-                        .foregroundColor(Color("SecondMainColor"))
-                    InputTextFieldView(text: $viewModel.newUser.email,
-                                       placeholder: "Email",
-                                       keyboardType: .emailAddress,
-                                       systemImage: "envelope")
-                    .font(.title3)
-                    .background(Color.black.opacity(0.05))
-                    .padding(2)
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(50)
-                    .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                    InputPasswordView(password: $viewModel.newUser.password,
-                                      placeholder: "Password",
-                                      systemImage: "lock")
-                    .font(.title3)
-                    .background(Color.black.opacity(0.05))
-                    .padding(2)
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(50)
-                    .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                   // Divider()
-                    InputTextFieldView(text: $viewModel.newUser.Name,
-                                       placeholder: "Name",
-                                       keyboardType: .namePhonePad,
-                                       systemImage: nil)
-                    .font(.title3)
-                    .background(Color.black.opacity(0.05))
-                    .padding(2)
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(50)
-                    .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                   
+            ZStack {
+                Color.theme.background.ignoresSafeArea()
+                VStack(spacing: 32) {
                     
-                
-                }
-                
-                ButtonView(title: "Sign up") {
-                    viewModel.create()
-                }
-            }
-            .padding(.horizontal, 15)
-            //.navigationTitle("Register")
-            .applyClose()
-            .alert(isPresented: $viewModel.hasError,
-                   content: {
+                    VStack(spacing: 16) {
+                        Text("Register")
+                            .font(.system(size: 50, weight: .bold))
+                            .padding()
+                            .foregroundColor(Color("SecondMainColor"))
+                        InputTextFieldView(text: $viewModel.newUser.email,
+                                           placeholder: "Email",
+                                           keyboardType: .emailAddress,
+                                           systemImage: "envelope")
+                        .font(.title3)
+                        .background(Color.black.opacity(0.05))
+                        .padding(2)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(50)
+                        .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                        InputPasswordView(password: $viewModel.newUser.password,
+                                          placeholder: "Password",
+                                          systemImage: "lock")
+                        .font(.title3)
+                        .background(Color.black.opacity(0.05))
+                        .padding(2)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(50)
+                        .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                       // Divider()
+                        InputTextFieldView(text: $viewModel.newUser.Name,
+                                           placeholder: "Name",
+                                           keyboardType: .namePhonePad,
+                                           systemImage: nil)
+                        .font(.title3)
+                        .background(Color.black.opacity(0.05))
+                        .padding(2)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(50)
+                        .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                       
+                        
                     
-                    if case .failed(let error) = viewModel.state {
-                        return Alert(
-                            title: Text("Error"),
-                            message: Text(error.localizedDescription))
-                    } else {
-                        return Alert(
-                            title: Text("Error"),
-                            message: Text("Something went wrong"))
                     }
-             })
+                    
+                    ButtonView(title: "Sign up") {
+                        viewModel.create()
+                    }
+                }
+                .padding(.horizontal, 15)
+                //.navigationTitle("Register")
+                .applyClose()
+                .alert(isPresented: $viewModel.hasError,
+                       content: {
+                        
+                        if case .failed(let error) = viewModel.state {
+                            return Alert(
+                                title: Text("Error"),
+                                message: Text(error.localizedDescription))
+                        } else {
+                            return Alert(
+                                title: Text("Error"),
+                                message: Text("Something went wrong"))
+                        }
+            })
+            }
      
         }
     }

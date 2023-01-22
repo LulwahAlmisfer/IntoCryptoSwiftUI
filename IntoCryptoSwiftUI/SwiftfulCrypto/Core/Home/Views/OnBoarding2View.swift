@@ -27,9 +27,10 @@ struct OnBoarding2View: View {
                         Rectangle().frame(width: 350, height: 55)
                         Text("Start Now").foregroundColor(.theme.background)
                     }
+               
                 }
 
-            }.foregroundColor(.theme.accent).font(.title3)
+            }.foregroundColor(.theme.accent).font(.title2)
         }
     }
 }
