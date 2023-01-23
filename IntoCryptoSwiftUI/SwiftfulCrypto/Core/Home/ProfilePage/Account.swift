@@ -69,7 +69,8 @@ struct Account: View {
                 
                 
                 
-            }  
+    }.background(Color("MainColor"))
+
         }
   
                                       }
