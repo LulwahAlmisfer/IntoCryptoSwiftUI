@@ -12,7 +12,8 @@ struct Profile: View {
     
     @State private var Toggling = false
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
-  
+     var name : String
+    @EnvironmentObject var service: SessionServiceImpl
     
     var body: some View {
         NavigationView{
@@ -39,7 +40,7 @@ struct Profile: View {
                         .foregroundColor(Color("SecondMainColor"))
                     
                     
-                    Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+                    Text(name).font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
                 }
                 //-----------------------------------------------------------//
                 //ZStack with calling class SettingsList
@@ -47,8 +48,8 @@ struct Profile: View {
           
                     
                     List {
-                        Section(header: Text("Settings")){
-                            
+                        
+                           
                             NavigationLink(destination: Account(), label: {
                                 Text("Account")
                             }).foregroundColor(Color("MainColor"))
@@ -106,7 +107,7 @@ struct Profile: View {
                                 .listRowBackground(Color("SecondMainColor"))
                             
                             
-                        }
+                       
                         
                     }.scrollDisabled(true)
                      .background(Color("MainColor"))
@@ -118,7 +119,8 @@ struct Profile: View {
                     //ZStack with calling class SettingsList
                     VStack{
                         Button("Logout", action: {
-                            print("عدلوه")
+                          //  print("عدلوه")
+                            service.logout()
                         }).padding(.bottom,35)
                             .foregroundColor(.red)
                             .bold()
@@ -152,6 +154,6 @@ struct Helper {
 struct Profile_Previews: PreviewProvider {
     
     static var previews: some View {
-        Profile()
+        Profile(name: "leen")
     }
 }

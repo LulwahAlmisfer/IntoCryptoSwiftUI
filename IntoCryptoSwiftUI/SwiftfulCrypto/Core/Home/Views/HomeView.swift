@@ -30,12 +30,12 @@ struct HomeView: View {
             // content layer
             VStack {
                 
-              //  ButtonView(title: "logOut") {
-               //     service.logout()
-               // }
+//                ButtonView(title: "logOut") {
+//                    service.logout()
+//                }
                 
-             //   Text("first name :\(service.userDetails?.Name ?? //"temp")" )
-                
+//                Text("first name :\(service.userDetails?.Name ?? "temp")" )
+
                 if selector != 3{
                     homeHeader}
                 if selector == 1 {
@@ -76,7 +76,7 @@ struct HomeView: View {
                         Text("Portfolio")
                     }}.tag(2)
                     
-                   Profile().tabItem{
+                   Profile(name: service.userDetails?.Name ?? "temp")  .environmentObject(service).tabItem{
                     VStack {
                         Image(systemName: "person")
                         Text("Profile")
@@ -167,7 +167,9 @@ extension HomeView {
     
     private var portfolioCoinsList: some View {
         List {
+            
             ForEach(vm.portfolioCoins) { coin in
+                
                 CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
@@ -175,6 +177,9 @@ extension HomeView {
                     }
                     .listRowBackground(Color.theme.background)
             }
+        }
+        .background{
+                    Color.theme.background
         }
         .listStyle(PlainListStyle())
     }
