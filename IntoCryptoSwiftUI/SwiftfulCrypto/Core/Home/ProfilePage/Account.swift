@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct Account: View {
-    
+    var name : String
+
     let AccountSettings = [
         
         "Email: Leen99@hotmail.com"
@@ -28,7 +29,7 @@ struct Account: View {
                         .padding(.top,30)
                         .foregroundColor(Color("SecondMainColor"))
                     
-                    Text("Leen").font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
+                    Text(name).font(Font.title3.weight(.semibold)).frame(height: 40,alignment: .center)
                 }
                 //-----------------------------------------------------------//
                 //ZStack with calling class SettingsList
@@ -81,7 +82,7 @@ struct Account: View {
     
     struct Account_Previews: PreviewProvider {
         static var previews: some View {
-            Account()
+            Account(name: "Leen")
         }
     }
 

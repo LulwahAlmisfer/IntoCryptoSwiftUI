@@ -41,17 +41,16 @@ struct DetailView: View {
                 ChartView(coin: vm.coin)
                     .padding(.vertical)
 
-            //    VStack(spacing: 20) {
-                  //  overviewTitle
-                  //  Divider()
-                  //  descriptionSection
-                  //  overviewGrid
-                   // additionalTitle
-                  //  Divider()
-                 //   additionalGrid
-                 //   websiteSection
-               // }
-              //  .padding()
+                VStack(alignment: .center, spacing: 20) {
+                   Spacer()
+                    overviewTitle
+                   Divider()
+                    descriptionSection
+                    overviewGrid
+        
+                    additionalGrid
+                 
+                }.padding()    
             }
         }
         .background(

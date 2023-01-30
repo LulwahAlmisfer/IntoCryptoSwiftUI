@@ -50,7 +50,7 @@ struct Profile: View {
                     List {
                         
                            
-                            NavigationLink(destination: Account(), label: {
+                        NavigationLink(destination: Account(name: name), label: {
                                 Text("Account")
                             }).foregroundColor(Color("MainColor"))
                                 .listRowBackground(Color("SecondMainColor"))
