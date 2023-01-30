@@ -13,7 +13,7 @@ struct LoginView: View {
     @StateObject private var viewModel = LoginViewModelImpl(
         service: LoginServiceImpl()
     )
-    
+    @AppStorage("key9")  var shouldshowonb = true
 
     var body: some View {
         
@@ -103,6 +103,9 @@ struct LoginView: View {
                     }
             
         })
+        }
+        .fullScreenCover(isPresented: $shouldshowonb ){
+           tab(shouldshowonb: $shouldshowonb)
         }
         
     }

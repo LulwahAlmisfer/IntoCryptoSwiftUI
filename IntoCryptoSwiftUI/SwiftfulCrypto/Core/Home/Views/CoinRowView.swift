@@ -33,11 +33,17 @@ struct CoinRowView: View {
                                     Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,30)
                                 
                         VStack(alignment: .leading) {
-                            Text(coin.currentHoldingsValue.asCurrencyWith2Decimals()).bold()
+                            Text(coin.currentHoldingsValue
+                                
+                                .asCurrencyWith2Decimals()
+                            ).bold()
                                
                             
                             
-                                    Text((coin.currentHoldings ?? 0).asNumberString())
+                            Text((coin.currentHoldings ?? 0)
+                               .asCurrencyWith2Decimals()
+                             //   .asNumberString()
+                            )
                                 .bold()
                             
                         }.foregroundColor(.theme.background)

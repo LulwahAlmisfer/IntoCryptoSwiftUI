@@ -30,6 +30,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
     @Published var state: LoginState = .na
     @Published var credentials: LoginCredentials = LoginCredentials(email: "",
                                                                     password: "")
+    
     @Published var hasError: Bool = false
     
     private var subscriptions = Set<AnyCancellable>()
@@ -52,6 +53,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
                 self?.state = .successfullyLoggedIn
             }
             .store(in: &subscriptions)
+        
     }
 }
 

@@ -16,7 +16,7 @@ struct HomeView: View {
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
    @State var selector = 1
-    @AppStorage("key8")  var shouldshowonb = true
+  //  @AppStorage("key9")  var shouldshowonb = true
     var body: some View {
         ZStack {
             // background layer
@@ -34,7 +34,7 @@ struct HomeView: View {
 //                    service.logout()
 //                }
                 
-//                Text("first name :\(service.userDetails?.Name ?? "temp")" )
+                // Text("first name :\(service ?? "temp")" )
 
                 if selector != 3{
                     homeHeader}
@@ -96,9 +96,9 @@ struct HomeView: View {
                 isActive: $showDetailView,
                 label: { EmptyView() })
         )
-        .fullScreenCover(isPresented: $shouldshowonb ){
-           tab(shouldshowonb: $shouldshowonb)
-         }//.ignoresSafeArea(.all)
+//        .fullScreenCover(isPresented: $shouldshowonb ){
+//           tab(shouldshowonb: $shouldshowonb)
+//         }//.ignoresSafeArea(.all)
         
     }
         

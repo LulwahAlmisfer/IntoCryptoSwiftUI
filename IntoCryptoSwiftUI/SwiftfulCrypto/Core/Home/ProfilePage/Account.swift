@@ -13,7 +13,7 @@ struct Account: View {
         
         "Email: Leen99@hotmail.com"
     ]
-    
+     var e = "Unknown"
     var body: some View {
         NavigationView{
             VStack{
@@ -40,7 +40,7 @@ struct Account: View {
                             
                             ForEach(self.AccountSettings, id: \.self)
                             {
-                                item in Text(item)
+                                item in Text(e)
                                 
                             } .foregroundColor(Color("MainColor"))
                                 .listRowBackground(Color("SecondMainColor"))
