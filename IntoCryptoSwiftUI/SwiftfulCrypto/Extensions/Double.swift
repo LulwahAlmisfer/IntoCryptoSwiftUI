@@ -17,7 +17,7 @@ extension Double {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
-      //  formatter.locale = . // <- default value
+        formatter.locale = .current // <- default value
         formatter.currencyCode = "usd" // <- change currency
         formatter.currencySymbol = "$" // <- change currency symbol
         formatter.minimumFractionDigits = 2

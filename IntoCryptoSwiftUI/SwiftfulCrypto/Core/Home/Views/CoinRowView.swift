@@ -33,16 +33,16 @@ struct CoinRowView: View {
                                     Text(coin.name).foregroundColor(.theme.background).font(.title2).bold()}.padding(.top,30)
                                 
                         VStack(alignment: .leading) {
-                            Text(coin.currentHoldingsValue
-                                
-                                .asCurrencyWith2Decimals()
+                            Text("$" + coin.currentHoldingsValue
+                                .asNumberString()
+                               // .asCurrencyWith2Decimals()
                             ).bold()
                                
                             
                             
                             Text((coin.currentHoldings ?? 0)
-                               .asCurrencyWith2Decimals()
-                             //   .asNumberString()
+                              // .asCurrencyWith2Decimals()
+                                .asNumberString()// + "$"
                             )
                                 .bold()
                             
@@ -54,7 +54,11 @@ struct CoinRowView: View {
                             
                             VStack(alignment: .trailing){
                               
-                                Text(coin.currentPrice.asCurrencyWith6Decimals())
+                                Text("$" + coin.currentPrice
+                                    .asNumberString()
+                                  // .asCurrencyWith6Decimals()
+                                    
+                                )
                                     .bold()
                                     .padding(.top,10)
                                     .foregroundColor(Color.theme.background)
@@ -151,7 +155,11 @@ extension CoinRowView {
     
     private var rightColumn: some View {
         VStack(alignment: .trailing) {
-            Text(coin.currentPrice.asCurrencyWith6Decimals())
+            Text("$" +
+                coin.currentPrice
+                .asNumberString()
+                //.asCurrencyWith6Decimals()
+            )
                 .bold()
                 .foregroundColor(Color.theme.accent)
             Text(coin.priceChangePercentage24H?.asPercentString() ?? "")

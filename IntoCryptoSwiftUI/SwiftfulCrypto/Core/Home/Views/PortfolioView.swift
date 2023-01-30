@@ -119,7 +119,10 @@ extension PortfolioView {
                     Text(selectedCoin?.symbol.uppercased() ?? "")
                 }
                 Spacer()
-                Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
+                Text("$" + (selectedCoin?.currentPrice
+                    .asNumberString() ?? ""))
+                   // .asCurrencyWith6Decimals()
+                  //   ?? "")
             }
             Divider()
             HStack {
@@ -133,9 +136,13 @@ extension PortfolioView {
             HStack {
                 Text("Current value")
                 Spacer()
-                Text(getCurrentValue().asCurrencyWith2Decimals())
+                Text("$" + getCurrentValue()
+                    .asNumberString()
+                   // .asCurrencyWith2Decimals()
+                )
             }
         }
+        
         .animation(.none)
         .padding()
         .font(.headline)
