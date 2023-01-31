@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
+import FirebaseCore
+import FirebaseAuth
 
 struct Account: View {
+    @EnvironmentObject var service: SessionServiceImpl
+    @Environment(\.managedObjectContext) var moc
+    @State var ref: DatabaseReference!
     var name : String
 
     let AccountSettings = [
@@ -15,6 +22,9 @@ struct Account: View {
         "Email: Leen99@hotmail.com"
     ]
      var e = "Unknown"
+    
+     
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -60,7 +70,17 @@ struct Account: View {
                 //ZStack with calling class SettingsList
                 VStack{
                     Button("Delete Account", action: {
-                        print("عدلوه")
+                        
+                        
+                        Auth.auth().currentUser!.delete { error in
+                                if let error = error {
+                                    print("error deleting user - \(error)")
+                                } else {
+                                    print("Account deleted")
+                                }
+                            }
+                     
+
                     }).padding(.bottom,100)
                         .foregroundColor(.red)
                         .bold()
@@ -75,6 +95,8 @@ struct Account: View {
         }
   
                                       }
+    
+        
                                 }
         
     

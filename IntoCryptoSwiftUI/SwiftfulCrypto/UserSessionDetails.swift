@@ -4,6 +4,7 @@
 //
 //  Created by lulwah on 18/01/2023.
 //
+
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
@@ -20,6 +21,7 @@ import Combine
 enum SessionState {
     case loggedIn
     case loggedOut
+
 }
 
 struct UserSessionDetails {
@@ -68,11 +70,11 @@ private extension SessionServiceImpl {
                 let currentUser = Auth.auth().currentUser
                 self.state = currentUser == nil ? .loggedOut : .loggedIn
                 
+                
+                
                 if let uid = currentUser?.uid {
                 
-                    
                 
-                    
                     Database
                         .database()
                         .reference()
@@ -89,8 +91,21 @@ private extension SessionServiceImpl {
                             DispatchQueue.main.async {
                                 self.userDetails = UserSessionDetails(Name:name)
                             }
+                        
+                       
+
+                            
                         }
                 }
             }
     }
+    
+
+   
+  
+        
+        
+    
+    
+    
 }

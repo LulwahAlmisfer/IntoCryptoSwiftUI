@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var service: SessionServiceImpl
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // animate right
@@ -89,6 +90,7 @@ struct HomeView: View {
             .sheet(isPresented: $showSettingsView, content: {
                 SettingsView()
             })
+            
         }
         .background(
             NavigationLink(
@@ -101,13 +103,17 @@ struct HomeView: View {
 //         }//.ignoresSafeArea(.all)
         
     }
+   
+    
         
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             HomeView()
+            
                 .navigationBarHidden(true)
         }
         .environmentObject(dev.homeVM)
