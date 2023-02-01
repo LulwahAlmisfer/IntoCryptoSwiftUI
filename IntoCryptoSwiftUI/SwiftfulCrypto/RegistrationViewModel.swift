@@ -5,7 +5,7 @@
 //  Created by lulwah on 18/01/2023.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 enum RegistrationState {
@@ -35,6 +35,8 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
 
     private var subscriptions = Set<AnyCancellable>()
     
+    @AppStorage("User_Email") private var email = ""
+
     init(service: RegistrationService) {
         self.service = service
         setupErrorSubscription()
@@ -52,6 +54,7 @@ final class RegistrationViewModelImpl: ObservableObject, RegistrationViewModel {
                 default: break
                 }
             } receiveValue: { [weak self] in
+                self?.email = self?.newUser.email ?? "Unknown"
                 self?.state = .successfullyRegistered
             }
             .store(in: &subscriptions)

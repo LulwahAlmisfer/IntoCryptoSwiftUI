@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject private var viewModel = RegistrationViewModelImpl(
         service: RegistrationServiceImpl())
+        
     var body: some View {
         
         NavigationView {

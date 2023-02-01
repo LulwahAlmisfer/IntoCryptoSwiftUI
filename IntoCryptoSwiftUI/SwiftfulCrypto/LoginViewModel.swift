@@ -35,6 +35,8 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
     
     private var subscriptions = Set<AnyCancellable>()
     
+    @AppStorage("User_Email") private var email = ""
+
     init(service: LoginService) {
         self.service = service
         setupErrorSubscription()
@@ -50,6 +52,7 @@ final class LoginViewModelImpl: ObservableObject, LoginViewModel {
                 default: break
                 }
             } receiveValue: { [weak self] in
+                self?.email = self?.credentials.email ?? "Unknwon"
                 self?.state = .successfullyLoggedIn
             }
             .store(in: &subscriptions)

@@ -21,9 +21,9 @@ struct Account: View {
         
         "Email: Leen99@hotmail.com"
     ]
-     var e = "Unknown"
-    
-     
+
+    @AppStorage("User_Email") private var email = ""
+
     
     var body: some View {
         NavigationView{
@@ -51,7 +51,7 @@ struct Account: View {
                             
                             ForEach(self.AccountSettings, id: \.self)
                             {
-                                item in Text(e)
+                                item in Text(email)
                                 
                             } .foregroundColor(Color("MainColor"))
                                 .listRowBackground(Color("SecondMainColor"))
