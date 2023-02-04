@@ -1,9 +1,3 @@
-//
-//  CoinRowView.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/8/21.
-//
 
 import SwiftUI
 
@@ -35,14 +29,14 @@ struct CoinRowView: View {
                         VStack(alignment: .leading) {
                             Text("$" + coin.currentHoldingsValue
                                 .asNumberString()
-                               // .asCurrencyWith2Decimals()
+                               
                             ).bold()
                                
                             
                             
                             Text((coin.currentHoldings ?? 0)
-                              // .asCurrencyWith2Decimals()
-                                .asNumberString()// + "$"
+                            
+                                .asNumberString()
                             )
                                 .bold()
                             
@@ -56,7 +50,7 @@ struct CoinRowView: View {
                               
                                 Text("$" + coin.currentPrice
                                     .asNumberString()
-                                  // .asCurrencyWith6Decimals()
+                                 
                                     
                                 )
                                     .bold()
@@ -84,13 +78,7 @@ struct CoinRowView: View {
                             .padding(.bottom,35).aspectRatio(contentMode: .fit)
                      
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                   
                     
                     
                 }
@@ -158,7 +146,7 @@ extension CoinRowView {
             Text("$" +
                 coin.currentPrice
                 .asNumberString()
-                //.asCurrencyWith6Decimals()
+          
             )
                 .bold()
                 .foregroundColor(Color.theme.accent)

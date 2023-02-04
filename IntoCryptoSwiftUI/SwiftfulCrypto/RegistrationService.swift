@@ -1,9 +1,4 @@
-//
-//  RegistrationService.swift
-//  SwiftfulCrypto
-//
-//  Created by lulwah on 18/01/2023.
-//
+
 import Combine
 import Foundation
 import FirebaseDatabase

@@ -1,9 +1,3 @@
-//
-//  RegisterView.swift
-//  SwiftfulCrypto
-//
-//  Created by lulwah on 18/01/2023.
-//
 
 import SwiftUI
 
@@ -43,7 +37,7 @@ struct RegisterView: View {
                         .frame(maxWidth: .infinity)
                         .cornerRadius(50)
                         .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                       // Divider()
+                
                         InputTextFieldView(text: $viewModel.newUser.Name,
                                            placeholder: "Name",
                                            keyboardType: .namePhonePad,
@@ -64,7 +58,6 @@ struct RegisterView: View {
                     }
                 }
                 .padding(.horizontal, 15)
-                //.navigationTitle("Register")
                 .applyClose()
                 .alert(isPresented: $viewModel.hasError,
                        content: {

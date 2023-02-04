@@ -1,9 +1,3 @@
-//
-//  SwiftfulCryptoApp.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/8/21.
-//
 
 import SwiftUI
 import Firebase
@@ -47,19 +41,12 @@ struct SwiftfulCryptoApp: App {
                         case .loggedOut:
                             LoginView()
                         }
-                    //HomeView()
-                      //  .navigationBarHidden(true)
+               
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
                 .environmentObject(vm)
 
-//                ZStack {
-//                    if showLaunchView {
-//                        LaunchView(showLaunchView: $showLaunchView)
-//                            .transition(.move(edge: .leading))
-//                    }
-//                }
-//                .zIndex(2.0)
+
             }
             .preferredColorScheme(isDarkMode ? .dark : .light)
 

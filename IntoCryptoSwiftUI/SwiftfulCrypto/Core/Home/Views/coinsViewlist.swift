@@ -1,9 +1,3 @@
-//
-//  coinsViewlist.swift
-//  SwiftfulCrypto
-//
-//  Created by lulwah on 09/01/2023.
-//
 
 import SwiftUI
 

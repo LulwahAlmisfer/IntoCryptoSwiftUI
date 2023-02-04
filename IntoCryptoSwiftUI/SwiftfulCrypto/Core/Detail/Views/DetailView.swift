@@ -1,9 +1,3 @@
-//
-//  DetailView.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/11/21.
-//
 
 import SwiftUI
 

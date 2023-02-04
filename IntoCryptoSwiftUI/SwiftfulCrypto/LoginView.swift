@@ -1,9 +1,3 @@
-//
-//  LoginView.swift
-//  SwiftfulCrypto
-//
-//  Created by lulwah on 18/01/2023.
-//
 
 import SwiftUI
 
@@ -38,7 +32,6 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .cornerRadius(50)
                    .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
-                   // .padding(.vertical)
                     
                     InputPasswordView(password: $viewModel.credentials.password,
                                       placeholder: "Password",
@@ -88,7 +81,6 @@ struct LoginView: View {
                 
             }
             .padding(.horizontal, 15)
-            //.navigationTitle("Login")
             .alert(isPresented: $viewModel.hasError,
                    content: {
                     
@@ -165,9 +157,6 @@ struct ButtonView: View {
 }
 
 
-/**
-* Textfield input view component
-*/
 
 struct InputTextFieldView: View {
    
@@ -240,7 +229,7 @@ struct InputPasswordView: View {
                            Image(systemName: systemImage)
                                .font(.system(size: 16, weight: .semibold))
                                .padding(.leading, 5)
-                               //.foregroundColor(Color.accentColor.opacity(0.5))
+                            
                        }
                        
                        RoundedRectangle(cornerRadius: 40,

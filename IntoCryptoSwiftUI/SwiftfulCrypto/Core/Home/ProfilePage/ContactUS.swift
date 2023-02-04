@@ -1,9 +1,3 @@
-//
-//  ContactUS.swift
-//  SwiftfulCrypto
-//
-//  Created by Han on 15/01/2023.
-//
 
 import SwiftUI
 import MessageUI

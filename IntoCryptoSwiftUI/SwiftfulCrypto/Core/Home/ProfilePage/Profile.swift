@@ -1,10 +1,3 @@
-//
-//  Profile.swift
-//  SwiftfulCrypto
-//
-//  Created by Han on 15/01/2023.
-//
-
 
 import SwiftUI
 
@@ -119,7 +112,7 @@ struct Profile: View {
                     //ZStack with calling class SettingsList
                     VStack{
                         Button("Logout", action: {
-                          //  print("عدلوه")
+                        
                             service.logout()
                         }).padding(.bottom,35)
                             .foregroundColor(.red)

@@ -1,9 +1,4 @@
-//
-//  SwiftUIView.swift
-//  ui
-//
-//  Created by Lulu Khalid on 29/08/2021.
-//
+
 import SwiftUI
 import Lottie
 

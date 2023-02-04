@@ -1,9 +1,3 @@
-//
-//  PortfolioView.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/9/21.
-//
 
 import SwiftUI
 
@@ -36,7 +30,7 @@ struct PortfolioView: View {
             .navigationTitle("Edit Portfolio")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
-                 //   XMarkButton()
+                
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
@@ -121,8 +115,7 @@ extension PortfolioView {
                 Spacer()
                 Text("$" + (selectedCoin?.currentPrice
                     .asNumberString() ?? ""))
-                   // .asCurrencyWith6Decimals()
-                  //   ?? "")
+                 
             }
             Divider()
             HStack {
@@ -138,7 +131,7 @@ extension PortfolioView {
                 Spacer()
                 Text("$" + getCurrentValue()
                     .asNumberString()
-                   // .asCurrencyWith2Decimals()
+                  
                 )
             }
         }

@@ -1,9 +1,4 @@
-//
-//  PortfolioDataService.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/10/21.
-//
+
 
 import Foundation
 import CoreData
@@ -26,7 +21,7 @@ class PortfolioDataService {
         }
     }
     
-    // MARK: PUBLIC
+
     
     func updatePortfolio(coin: CoinModel, amount: Double) {
         // check if coin is already in portfolio

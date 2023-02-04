@@ -1,9 +1,3 @@
-//
-//  ChartView.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/13/21.
-//
 
 import SwiftUI
 
@@ -33,19 +27,15 @@ struct ChartView: View {
         VStack {
             chartView
                 .frame(width: 330, height: 77,alignment: .center)
-                .background(chartBackground)
-                .overlay(chartYAxis.padding(.horizontal, 4), alignment: .leading)
-            
-            chartDateLabels
-                .padding(.horizontal, 4)
+               
         }
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                //withAnimation(.linear(duration: 2.0)) {
+             
                     percentage = 1.0
-               // }
+             
             }
         }
         
@@ -87,32 +77,6 @@ extension ChartView {
         }
     }
     
-    private var chartBackground: some View {
-        VStack {
-//            Divider()
-//           Spacer()
-//          Divider()
-//           Spacer()
-//            Divider()
-        }
-    }
-    
-    private var chartYAxis: some View {
-        VStack {
-           // Text(maxY.formattedWithAbbreviations())
-            Spacer()
-           // Text(((maxY + minY) / 2).formattedWithAbbreviations())
-            Spacer()
-          //  Text(minY.formattedWithAbbreviations())
-        }
-    }
-    
-    private var chartDateLabels: some View {
-        HStack {
-           // Text(startingDate.asShortDateString())
-            Spacer()
-           // Text(endingDate.asShortDateString())
-        }
-    }
+   
     
 }

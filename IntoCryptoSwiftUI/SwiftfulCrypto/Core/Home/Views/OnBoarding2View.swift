@@ -1,9 +1,3 @@
-//
-//  OnBoarding2View.swift
-//  SwiftfulCrypto
-//
-//  Created by lulwah on 14/01/2023.
-//
 
 import SwiftUI
 

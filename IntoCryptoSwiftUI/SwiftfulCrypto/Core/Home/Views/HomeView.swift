@@ -1,9 +1,4 @@
-//
-//  HomeView.swift
-//  SwiftfulCrypto
-//
-//  Created by Nick Sarno on 5/8/21.
-//
+
 
 import SwiftUI
 
@@ -17,9 +12,10 @@ struct HomeView: View {
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
    @State var selector = 1
-  //  @AppStorage("key9")  var shouldshowonb = true
+  
     var body: some View {
         ZStack {
+            
             // background layer
             Color.theme.background
                 .ignoresSafeArea()
@@ -30,12 +26,6 @@ struct HomeView: View {
             
             // content layer
             VStack {
-                
-//                ButtonView(title: "logOut") {
-//                    service.logout()
-//                }
-                
-                // Text("first name :\(service ?? "temp")" )
 
                 if selector != 3{
                     homeHeader}
@@ -43,25 +33,10 @@ struct HomeView: View {
                     portfolioCoinsListH.padding(.leading)
                     SearchBarView(searchText: $vm.searchText)
                 }
-                //HomeStatsView(showPortfolio: $showPortfolio)
+                
                 if selector == 1 {
                     columnTitles}
                 
-//                if !showPortfolio {
-//                    allCoinsList
-//                        .transition(.move(edge: .leading))
-//                }
-//
-//                if showPortfolio {
-//                    ZStack(alignment: .top) {
-//                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
-//                            portfolioEmptyText
-//                        } else {
-//                            portfolioCoinsList
-//                        }
-//                    }
-//                    .transition(.move(edge: .trailing))
-//                }
                 
                 TabView(selection: $selector) {
 
@@ -87,9 +62,6 @@ struct HomeView: View {
 
                 Spacer(minLength: 0)
             }
-            .sheet(isPresented: $showSettingsView, content: {
-                SettingsView()
-            })
             
         }
         .background(
@@ -98,9 +70,7 @@ struct HomeView: View {
                 isActive: $showDetailView,
                 label: { EmptyView() })
         )
-//        .fullScreenCover(isPresented: $shouldshowonb ){
-//           tab(shouldshowonb: $shouldshowonb)
-//         }//.ignoresSafeArea(.all)
+
         
     }
    
@@ -126,12 +96,12 @@ extension HomeView {
     private var homeHeader: some View {
         HStack {
             CircleButtonView(iconName: showPortfolio ? "plus" : "plus")
-            //    .animation(.none)
+       
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
                     } else {
-                      //  showSettingsView.toggle()
+               
                         showPortfolioView.toggle()
                     }
                 }
@@ -145,13 +115,7 @@ extension HomeView {
                 .foregroundColor(Color.theme.accent)
                 .animation(.none)
             Spacer()
-//            CircleButtonView(iconName: "chevron.right")
-//                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
-//                .onTapGesture {
-//                    withAnimation(.spring()) {
-//                        showPortfolio.toggle()
-//                    }
-//                }
+
         }
         .padding(.trailing,60)
     }
@@ -207,14 +171,7 @@ extension HomeView {
         }
         .listStyle(PlainListStyle())
     }
-    private var portfolioEmptyText: some View {
-        Text("You haven't added any coins to your portfolio yet. Click the + button to get started! 🧐")
-            .font(.callout)
-            .foregroundColor(Color.theme.accent)
-            .fontWeight(.medium)
-            .multilineTextAlignment(.center)
-            .padding(50)
-    }
+
     
     private func segue(coin: CoinModel) {
         selectedCoin = coin

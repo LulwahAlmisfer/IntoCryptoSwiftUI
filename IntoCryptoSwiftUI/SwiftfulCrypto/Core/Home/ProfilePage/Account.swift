@@ -1,9 +1,3 @@
-//
-//  Account.swift
-//  Learning
-//
-//  Created by Han on 18/01/2023.
-//
 
 import SwiftUI
 import Firebase
