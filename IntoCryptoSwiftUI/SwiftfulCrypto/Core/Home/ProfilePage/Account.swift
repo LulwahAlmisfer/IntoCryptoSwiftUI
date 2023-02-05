@@ -79,7 +79,7 @@ struct Account: View {
                         Button("Delete Account", action: {
                             
                             
-                            Auth.auth().currentUser!.delete { error in
+              Auth.auth().currentUser!.delete { error in
                                 if let error = error {
                                     print("error deleting user - \(error)")
                                 } else {
@@ -93,7 +93,7 @@ struct Account: View {
                             .bold()
                         
                         
-                    }.aspectRatio(contentMode: .fit).padding(.bottom,100)
+                    }.padding(.bottom,100)
                     
                     
                     
