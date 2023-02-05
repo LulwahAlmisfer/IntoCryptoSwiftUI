@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct PortfolioView: View {
+struct PortfolioView: View { //TODO: change the name PortfolioView to EditPortfolioView
     
     @EnvironmentObject private var vm: HomeViewModel
     @State private var selectedCoin: CoinModel? = nil
