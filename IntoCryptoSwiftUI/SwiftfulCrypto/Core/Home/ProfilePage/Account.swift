@@ -29,6 +29,7 @@ struct Account: View {
                             Image(systemName: "globe")
                                 .resizable()
                                 .frame(width: 25, height: 25)
+                                .padding(.top,20)
                                 .foregroundColor(Color("SecondMainColor"))
                             Spacer()
                         }
