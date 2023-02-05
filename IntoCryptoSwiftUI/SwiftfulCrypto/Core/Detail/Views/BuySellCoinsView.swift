@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct BuySellCoinsView: View {
-    
+   
     @Binding var coin: CoinModel?
     
     var body: some View {
-        VStack {
-            if let coin = coin {
-                Text(coin.name)
-                Text(coin.id)
-                CoinImageView(coin: coin)
+        NavigationView{
+            VStack {
+                if let coin = coin {
+                    Text(coin.name)
+                    Text(coin.id)
+                    CoinImageView(coin: coin)
+                }
             }
         }
+    }
+    
+}
+struct BuySellCoinsView2: PreviewProvider {
+    static var previews: some View {
+        BuySellCoinsView(coin: .constant(dev.coin))
+        
     }
 }
 
