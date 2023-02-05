@@ -77,7 +77,7 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
         )
         .background(
             NavigationLink(
-                destination: BuySellCoinsView(),
+                destination: BuySellCoinsView(coin: $selectedCoin),
                 isActive: $showBuySellView,
                 label: { EmptyView() })
         )
@@ -149,8 +149,7 @@ extension HomeView {
                 CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
-                        //TODO: present the buy&SellView
-                        showBuySellView.toggle()
+                        presentBuySellView(coin: coin)
                     }
                     .listRowBackground(Color.theme.background)
             }
@@ -183,6 +182,12 @@ extension HomeView {
     private func segue(coin: CoinModel) {
         selectedCoin = coin
         showDetailView.toggle()
+    }
+    
+    private func presentBuySellView(coin: CoinModel) {
+        //present the buySellView and pass the coin
+        selectedCoin = coin
+        showBuySellView.toggle()
     }
     
     private var columnTitles: some View {
