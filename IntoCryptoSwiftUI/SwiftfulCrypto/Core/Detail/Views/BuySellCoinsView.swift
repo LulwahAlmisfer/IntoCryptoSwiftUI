@@ -13,11 +13,12 @@ struct BuySellCoinsView: View {
     @State var method = 1
     @State var amount = ""
     @State var oldamount = "0"
+    @Binding  var showBuySellView: Bool
     var body: some View {
         NavigationView{
             ZStack {
                 Color.theme.background.ignoresSafeArea()
-                VStack (spacing:30){
+                VStack (spacing:25){
                     if let coin = coin {
                         HStack {
                             Text(coin.name).foregroundColor(.theme.accent)
@@ -25,13 +26,11 @@ struct BuySellCoinsView: View {
                             CoinImageView(coin: coin).frame(width: 50, height: 50)
                             
                         }
-                        
-                        Spacer()
                         Picker(selection: $method, label: Text("Picker")) {
                             Text("buy").tag(1)
                             Text("sell").tag(2)
-                        }.pickerStyle(.segmented)
-                        
+                        }.pickerStyle(.segmented).frame(width: 300)
+     
                         if method == 2 {
                             
                             HStack {
@@ -39,25 +38,30 @@ struct BuySellCoinsView: View {
                                 Text(oldamount).foregroundColor(.theme.accent)
                             }
                         }
+                        
                         HStack{
-                            Text("Amount")
+                            Text("Amount").font(.title3)
                             TextField("enter amount", text: $amount).textFieldStyle(.roundedBorder)
-                        }.padding()
+                        }.padding(25).foregroundColor(.theme.accent)
                         
                         HStack{
                             Text("Market price:")
                             Text("\(coin.currentPrice.asNumberString())")
                             Text("Total")
                             Text("\((coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
-                        }.padding()
+                        }.padding().foregroundColor(.theme.accent).font(.title3)
                         Spacer()
                     
-                ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
-                    if method == 1 {
-                        vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! + Double(amount)!))
-                    } else {
-                        vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))
-                    }
+                        ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
+                            if method == 1 {
+                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! + Double(amount)!))
+                            } else {
+                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))
+                            }
+                          
+                            
+                            showBuySellView.toggle()
+                            //
                         }
                     }
                 }.padding()
@@ -85,7 +89,7 @@ struct BuySellCoinsView: View {
 
     struct BuySellCoinsView2: PreviewProvider {
         static var previews: some View {
-            BuySellCoinsView(coin: .constant(dev.coin))  .environmentObject(dev.homeVM)
+            BuySellCoinsView(coin: .constant(dev.coin), showBuySellView: .constant(true) ).environmentObject(dev.homeVM)
             
         }
     }

@@ -77,7 +77,7 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
         )
         .background(
             NavigationLink(
-                destination: BuySellCoinsView(coin: $selectedCoin),
+                destination: BuySellCoinsView(coin: $selectedCoin, showBuySellView: $showBuySellView ),
                 isActive: $showBuySellView,
                 label: { EmptyView() })
         )
