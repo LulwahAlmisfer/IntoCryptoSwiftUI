@@ -16,9 +16,11 @@ struct DetailLoadingView: View {
 }
 
 struct DetailView: View {
-    
+//    @Binding  var showBuySellView: Bool
+
     @StateObject private var vm: DetailViewModel
     @State private var showFullDescription: Bool = false
+    
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -34,17 +36,37 @@ struct DetailView: View {
             VStack {
                 ChartView(coin: vm.coin)
                     .padding(.vertical)
-
+                
                 VStack(alignment: .center, spacing: 20) {
-                   Spacer()
+                    Spacer()
                     overviewTitle
-                   Divider()
+                    Divider()
                     descriptionSection
                     overviewGrid
-        
+                    
                     additionalGrid
-                 
-                }.padding()    
+                    
+                }.padding()
+                
+                VStack{
+                    Text("Want to exchange this coin?") .font(Font.system(size: 14).italic().bold()).padding()
+                    
+                
+                           
+                           
+                 NavigationLink(destination: BuySellCoinsView(coin:.constant(vm.coin) , showBuySellView:.constant(true) ), label: {
+                        
+                        Text("Start Exchanging")
+                     
+                     
+                       // showBuySellView.toggle()
+                        
+                 }).listStyle(.automatic)
+                 .background(Color("SecondMainColor"))
+                    .foregroundColor(Color("MainColor"))
+                           
+                }
+             
             }
         }
         .background(
@@ -57,6 +79,7 @@ struct DetailView: View {
                 navigationBarTrailingItems
             }
         }
+        
     }
 }
 

@@ -70,8 +70,8 @@ ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
                             }
                           
                             
-                            showBuySellView.toggle()
-                            //
+    showBuySellView.toggle()
+                            
                         }
                     }
                 }.padding()
