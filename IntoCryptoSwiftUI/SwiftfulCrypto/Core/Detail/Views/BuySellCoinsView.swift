@@ -1,19 +1,15 @@
-//
-//  BuySellCoinsView.swift
-//  SwiftfulCrypto
-//
-//  Created by Azzam AL-Rashed on 05/02/2023.
-//
 
 import SwiftUI
 
 struct BuySellCoinsView: View {
+    
     @EnvironmentObject private var vm: HomeViewModel
     @Binding var coin: CoinModel?
     @State var method = 1
     @State var amount = ""
     @State var oldamount = "0"
     @Binding  var showBuySellView: Bool
+    
     var body: some View {
         NavigationView{
             ZStack {
@@ -21,38 +17,52 @@ struct BuySellCoinsView: View {
                 VStack (spacing:25){
                     if let coin = coin {
                         HStack {
-                            Text(coin.name).foregroundColor(.theme.accent)
                             
-                            CoinImageView(coin: coin).frame(width: 50, height: 50)
+                            CoinImageView(coin: coin).frame(width: 30, height: 30)
+                            
+                            Text(coin.name).foregroundColor(.theme.accent).fontWeight(.semibold)
+                        
                             
                         }
                         Picker(selection: $method, label: Text("Picker")) {
-                            Text("buy").tag(1)
-                            Text("sell").tag(2)
-                        }.pickerStyle(.segmented).frame(width: 300)
+                            Text("Buy").tag(1)
+                            Text("Sell").tag(2)
+                        
+                        }.pickerStyle(.segmented).frame(width: 330,alignment: .center)
+                            .padding()
      
-                        if method == 2 {
-                            
-                            HStack {
-                                Text("Owned = ").foregroundColor(.theme.accent)
-                                Text(oldamount).foregroundColor(.theme.accent)
+                        
+                        
+                        HStack{
+                            Text("Amount:").font(.title3).fontWeight(.semibold)
+                            TextField("Enter Amount", text: $amount).textFieldStyle(.roundedBorder)
+                        }.padding(30).foregroundColor(.theme.accent)
+                        
+                        
+            
+                        VStack{
+                            HStack(alignment: .center){
+                                Text("Market price:").fontWeight(.semibold)
+                                Text("\(coin.currentPrice.asNumberString())")
+                            }.padding()
+
+                  
+                            HStack(alignment: .center){
+                                Text("Your Total:").fontWeight(.semibold)
+                                Text("\((coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
                             }
-                        }
-                        
-                        HStack{
-                            Text("Amount").font(.title3)
-                            TextField("enter amount", text: $amount).textFieldStyle(.roundedBorder)
-                        }.padding(25).foregroundColor(.theme.accent)
-                        
-                        HStack{
-                            Text("Market price:")
-                            Text("\(coin.currentPrice.asNumberString())")
-                            Text("Total")
-                            Text("\((coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
+                            
+                            if method == 2 {
+                                
+                                HStack {
+                                    Text("Owned:").foregroundColor(.theme.accent).fontWeight(.semibold)
+                                    Text(oldamount).foregroundColor(.theme.accent)
+                                }.padding()
+                            }
                         }.padding().foregroundColor(.theme.accent).font(.title3)
                         Spacer()
                     
-                        ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
+ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
                             if method == 1 {
                                 vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! + Double(amount)!))
                             } else {
