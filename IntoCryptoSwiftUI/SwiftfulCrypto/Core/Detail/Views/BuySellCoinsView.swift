@@ -43,7 +43,8 @@ struct BuySellCoinsView: View {
                             Text("\((coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
                         }.padding()
                         Spacer()
-                        ButtonView(title: method == 1 ? "Buy": "Sell"){
+                    
+                        ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
                             print("d")
                         }
                     }

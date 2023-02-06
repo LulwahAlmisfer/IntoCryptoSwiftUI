@@ -23,7 +23,7 @@ struct ForgotPasswordView: View {
                 .cornerRadius(50)
                .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                 
-                ButtonView(title: "Send Password Reset") {
+                ButtonLocalizedStringKey(title: "Send Password Reset") {
                     viewModel.sendPasswordResetRequest()
                     presentationMode.wrappedValue.dismiss()
                 }

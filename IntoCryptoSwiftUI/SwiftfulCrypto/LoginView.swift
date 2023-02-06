@@ -14,6 +14,16 @@ struct LoginView: View {
         ZStack {
             Color.theme.background.ignoresSafeArea()
             VStack(spacing: 16) {
+                Button(action: Helper.goToAppSetting) {
+                 HStack {
+                     Image(systemName: "globe")
+                         .resizable()
+                         .frame(width: 25, height: 25)
+                         .foregroundColor(Color("SecondMainColor"))
+                     Spacer()
+                 }
+                 .padding(.horizontal,30)
+                }
                 Spacer()
                 Text("Log In")
                     .font(.system(size: 50, weight: .bold))
@@ -60,16 +70,17 @@ struct LoginView: View {
                 }
                 
                 VStack(spacing: 16) {
-                    
-                    ButtonView(title: "Login") {
+                    Button(LocalizedStringKey("Login")){
+                    //ButtonView(title: "Login") {
                         viewModel.login()
                         
                     }
                     
-                    ButtonView(title: "Register",
-                               background: .clear,
-                               foreground: .primary,
-                               border: .primary) {
+                    Button(LocalizedStringKey("Register") ){
+                    //ButtonView(title: "Register",
+                               //background: .clear,
+                              // foreground: .primary,
+                             //  border: .primary) {
                         showRegistration.toggle()
                     }
                                
@@ -111,7 +122,7 @@ struct LoginView_Previews: PreviewProvider {
 }
 
 
-struct ButtonView: View {
+struct ButtonLocalizedStringKey: View {
    
    typealias ActionHandler = () -> Void
    
@@ -127,7 +138,7 @@ struct ButtonView: View {
                  background: Color = .theme.accent,
                  foreground: Color = .theme.background,
                  border: Color = .clear,
-                 handler: @escaping ButtonView.ActionHandler) {
+                 handler: @escaping ButtonLocalizedStringKey.ActionHandler) {
        self.title = title
        self.background = background
        self.foreground = foreground

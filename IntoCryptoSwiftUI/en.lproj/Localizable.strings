@@ -8,9 +8,13 @@
 "and start virtually trading" = "and start virtually trading";
 "with real-time prices risk free" = "with real-time prices risk free";
 "Start Now" = "Start Now";
-"Log in" = "Log in";
+"Log In" = "Log In";
 "Username" = "Username";
 "Password" = "Password";
+"Forgot Password?" = "Forgot Password?";
+"Login" = "Login";
+"Register" = "Register";
+"Error" = "Error";
 "Don't have an account? Sign up" = "Don't have an account? Sign up";
 "Sign up" = "Sign up";
 "Email" = "Email";

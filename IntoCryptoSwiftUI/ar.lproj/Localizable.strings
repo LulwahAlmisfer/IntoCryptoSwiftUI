@@ -9,9 +9,13 @@
 "and start virtually trading" = "وابدأ التداول فعليًا";
 "with real-time prices risk free" = "بأسعار فورية خالية من المخاطر";
 "Start Now" = "ابدأ الآن";
-"Log in" = "تسجيل الدخول";
+"Log In" = "تسجيل الدخول";
 "Username" = "اسم المستخدم";
 "Password" = "كلمة المرور";
+"Forgot Password?" = "نسيت كلمةالمرور؟";
+"Login" = "تسجيل الدخول";
+"Register" = "إنشاء حساب";
+"Error" = "حدث خطأ ما";
 "Don't have an account?" = "ليس لديك حساب؟";
 "Sign up" = "إنشاء حساب";
 "Email" = "البريد الإلكتروني";

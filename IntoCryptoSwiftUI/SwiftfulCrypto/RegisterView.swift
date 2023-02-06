@@ -8,12 +8,26 @@ struct RegisterView: View {
     var body: some View {
         
         NavigationView {
-            
+          
             ZStack {
-                Color.theme.background.ignoresSafeArea()
-                VStack(spacing: 32) {
+         
+               //Color.theme.background.ignoresSafeArea()
+                Button(action: Helper.goToAppSetting) {
+                    VStack {
+                        Image(systemName: "globe")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .padding(.top,1)
+                            .foregroundColor(Color("SecondMainColor"))
+                        Spacer()
+                    }
+                    .padding(.trailing,300)
                     
+                }
+                VStack(spacing: 32) {
+               
                     VStack(spacing: 16) {
+                        
                         Text("Register")
                             .font(.system(size: 50, weight: .bold))
                             .padding()
@@ -23,20 +37,22 @@ struct RegisterView: View {
                                            keyboardType: .emailAddress,
                                            systemImage: "envelope")
                         .font(.title3)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.theme.accent.opacity(0.05))
+                        .foregroundColor(Color.secondary)
                         .padding(2)
                         .frame(maxWidth: .infinity)
                         .cornerRadius(50)
-                        .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                       .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                         InputPasswordView(password: $viewModel.newUser.password,
                                           placeholder: "Password",
                                           systemImage: "lock")
                         .font(.title3)
-                        .background(Color.black.opacity(0.05))
+                        .background(Color.theme.accent.opacity(0.05))
+                        .foregroundColor(Color.secondary)
                         .padding(2)
                         .frame(maxWidth: .infinity)
                         .cornerRadius(50)
-                        .shadow(color: Color.black.opacity(0.05), radius: 60, x: 0.0, y: 16)
+                       .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                 
                         InputTextFieldView(text: $viewModel.newUser.Name,
                                            placeholder: "Name",
@@ -52,8 +68,8 @@ struct RegisterView: View {
                         
                     
                     }
-                    
-                    ButtonView(title: "Sign up") {
+                    Button(LocalizedStringKey("Sign up")){
+                    //ButtonView(title: "Sign up") {
                         viewModel.create()
                     }
                 }
