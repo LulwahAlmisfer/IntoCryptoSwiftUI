@@ -31,6 +31,7 @@ struct LoginView: View {
                     .foregroundColor(Color("SecondMainColor"))
                     .padding()
                 VStack {
+                    
                     //email and password
                     InputTextFieldView(text:  $viewModel.credentials.email,
                                        placeholder: "Email",
@@ -58,7 +59,7 @@ struct LoginView: View {
                 .padding(.vertical)
 
                 VStack {
-                    //Spacer()
+                  
                     Button(action: {
                         showForgotPassword.toggle()
                     }, label: {
@@ -72,7 +73,7 @@ struct LoginView: View {
                 
                 VStack(spacing: 16){
                     Button(LocalizedStringKey("Login")){
-                       // ButtonView(title: "Login") {}
+                      
                         viewModel.login()
                         
                     }

@@ -106,16 +106,8 @@ extension HomeView {
     
     private var homeHeader: some View {
         HStack {
-         /*   CircleButtonView(iconName: "plus")
-            
-                .onTapGesture {
-                    showPortfolioView.toggle()
-                }
-                .background(
-                    CircleButtonAnimationView(animate: $showPortfolio)
-                )*/
 
-            Text(showPortfolio ? "Portfolio" : "Live Prices")
+            Text(showPortfolio ? "Portfolio" : LocalizedStringKey("Live Prices"))
                 .font(Font.title2)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)

@@ -16,7 +16,7 @@ struct DetailLoadingView: View {
 }
 
 struct DetailView: View {
-//    @Binding  var showBuySellView: Bool
+
 
     @StateObject private var vm: DetailViewModel
     @State private var showFullDescription: Bool = false
@@ -43,7 +43,7 @@ struct DetailView: View {
                     Spacer()
                     overviewTitle
                     Divider()
-                    descriptionSection
+            
                     overviewGrid
                     
                     additionalGrid
@@ -51,14 +51,14 @@ struct DetailView: View {
                 }.padding()
                 Spacer()
                 VStack{
-                    Text("Want to exchange this coin?") .font(Font.system(size: 14).italic().bold()).padding()
+                    Text("Want to trade this coin?") .font(Font.system(size: 14).italic().bold()).padding()
                     
                 
                            
                            
                  NavigationLink(destination: BuySellCoinsView(coin:.constant(vm.coin) , showBuySellView: $showBuySellView), label: {
                  
-                        Text("Start Exchanging!")
+                        Text("Start Trading!")
                          .frame(width: 250,height:10 ,alignment: .center)
                                        .font(.system(size: 18))
                                        .padding()
@@ -67,7 +67,7 @@ struct DetailView: View {
                      RoundedRectangle(cornerRadius: 15)
                                             .stroke(Color.theme.accent, lineWidth: 12)
                                )
-                   //  let _ =   showBuySellView.toggle()
+               
                  }).background(Color("SecondMainColor"))
                  .fontWeight(.semibold)
                            

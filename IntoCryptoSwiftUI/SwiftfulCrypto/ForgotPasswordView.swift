@@ -39,7 +39,7 @@ struct ForgotPasswordView: View {
             }
             .padding(.horizontal, 15)
             .navigationTitle("Reset Password")
-        .applyClose()
+
         }
 }
 }

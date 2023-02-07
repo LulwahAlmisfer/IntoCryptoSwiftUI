@@ -22,11 +22,11 @@ struct CoinDetailModel: Codable {
 
 struct Links: Codable {
     let homepage: [String]?
-    let subredditURL: String?
+
     
     enum CodingKeys: String, CodingKey {
         case homepage
-        case subredditURL = "subreddit_url"
+    
     }
 }
 

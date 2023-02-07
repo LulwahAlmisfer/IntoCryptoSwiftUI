@@ -83,7 +83,6 @@ struct RegisterView: View {
                             )
                 }
                 .padding(.horizontal, 15)
-                .applyClose()
                 .alert(isPresented: $viewModel.hasError,
                        content: {
                         
@@ -108,29 +107,6 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
-    }
-}
-
-struct NavigationCloseViewModifier: ViewModifier {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    func body(content: Content) -> some View {
-        content
-            .toolbar {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "xmark")
-                })
-            }
-    }
-}
-
-extension View {
-    
-    func applyClose() -> some View {
-        self.modifier(NavigationCloseViewModifier())
     }
 }
 

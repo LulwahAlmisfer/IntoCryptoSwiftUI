@@ -95,13 +95,15 @@ struct BuySellCoinsView: View {
                 }.padding()
                     .padding(.vertical,30)
             }
-        }.onAppear{
+        }  .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .onAppear{
             
             updateSelectedCoin2(coin: coin!)
             
         }
         .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("you can't sell"), message: Text("Buy first"), dismissButton: .default(Text("Got it!")))
+                    Alert(title: Text("You can't sell!"), message: Text("Buy need to buy first"), dismissButton: .default(Text("Got it!")))
                 }
         
         }

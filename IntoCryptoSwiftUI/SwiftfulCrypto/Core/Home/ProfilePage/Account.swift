@@ -58,7 +58,7 @@ struct Account: View {
                                 
                                 ForEach(self.AccountSettings, id: \.self)
                                 {
-                                    //two texts for localization reasons
+                        //two texts for localization reasons
              item in Text("Email: ") + Text(" \(email)")
                                     
                                 } .foregroundColor(Color("MainColor"))

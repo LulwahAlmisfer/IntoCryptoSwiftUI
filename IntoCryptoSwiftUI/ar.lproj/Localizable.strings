@@ -61,8 +61,20 @@
 "Additional Details" = "تفاصيل إضافية";
 "Less" = "أقل";
 "Read more.." = "قراءة المزيد..";
-"Want to exchange this coin?" = "هل تريد تداول هذه العملة؟";
-"Start Exchanging!" = "ابدأ التداول!";
-"Buy" = "الشراء";
-"Sell" = "البيع";
+"Want to trade this coin?" = "هل تريد تداول هذه العملة؟";
+"Start Trading!" = "ابدأ التداول!";
+"Buy" = "شراء";
+"Sell" = "بيع";
 "Email: " = "البريد الالكتروني:";
+"Current Price" = "السعر الحالي";
+"Market Capitalization" = "القيمة السوقية";
+"Rank" = "الرتبة";
+"Volume" = "الحجم";
+"n/a" = "غير متاح";
+"24h High" = "الارتفاع خلال ٢٤س";
+"24h Low" = "الانخفاض خلال ٢٤س";
+"24h Price Change" = " الأسعار خلال ٢٤س";
+"24h Market Cap Change" = " القيمة السوقية خلال ٢٤س";
+//"Block Time" = "وقت الكتلة";
+//"Hashing Algorithm" = "خوارزمية التجزئة";
+

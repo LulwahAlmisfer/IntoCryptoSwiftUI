@@ -2,13 +2,12 @@
 import Foundation
 import Combine
 
+
 class DetailViewModel: ObservableObject {
     
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var additionalStatistics: [StatisticModel] = []
     @Published var coinDescription: String? = nil
-    @Published var websiteURL: String? = nil
-    @Published var redditURL: String? = nil
 
     @Published var coin: CoinModel
     private let coinDetailService: CoinDetailDataService
@@ -34,8 +33,6 @@ class DetailViewModel: ObservableObject {
         coinDetailService.$coinDetails
             .sink { [weak self] (returnedCoinDetails) in
                 self?.coinDescription = returnedCoinDetails?.readableDescription
-                self?.websiteURL = returnedCoinDetails?.links?.homepage?.first
-                self?.redditURL = returnedCoinDetails?.links?.subredditURL
             }
             .store(in: &cancellables)
         
@@ -51,6 +48,7 @@ class DetailViewModel: ObservableObject {
     private func createOverviewArray(coinModel: CoinModel) -> [StatisticModel] {
         let price = coinModel.currentPrice.asCurrencyWith6Decimals()
         let pricePercentChange = coinModel.priceChangePercentage24H
+
         let priceStat = StatisticModel(title: "Current Price", value: price, percentageChange: pricePercentChange)
         
         let marketCap = "$" + (coinModel.marketCap?.formattedWithAbbreviations() ?? "")
@@ -85,15 +83,9 @@ class DetailViewModel: ObservableObject {
         let marketCapPercentChange = coinModel.marketCapChangePercentage24H
         let marketCapChangeStat = StatisticModel(title: "24h Market Cap Change", value: marketCapChange, percentageChange: marketCapPercentChange)
         
-        let blockTime = coinDetailModel?.blockTimeInMinutes ?? 0
-        let blockTimeString = blockTime == 0 ? "n/a" : "\(blockTime)"
-        let blockStat = StatisticModel(title: "Block Time", value: blockTimeString)
-        
-        let hashing = coinDetailModel?.hashingAlgorithm ?? "n/a"
-        let hashingStat = StatisticModel(title: "Hashing Algorithm", value: hashing)
-        
+  
         let additionalArray: [StatisticModel] = [
-            highStat, lowStat, priceChangeStat, marketCapChangeStat, blockStat, hashingStat
+            highStat, lowStat, priceChangeStat, marketCapChangeStat
         ]
         return additionalArray
     }
