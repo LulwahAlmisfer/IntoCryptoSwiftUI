@@ -2,13 +2,13 @@
 import SwiftUI
 
 struct DetailLoadingView: View {
-    
+    @Binding  var showBuySellView: Bool
     @Binding var coin: CoinModel?
-
+   
     var body: some View {
         ZStack {
             if let coin = coin {
-                DetailView(coin: coin)
+                DetailView(coin: coin , b: $showBuySellView)
             }
         }
     }
@@ -20,6 +20,7 @@ struct DetailView: View {
 
     @StateObject private var vm: DetailViewModel
     @State private var showFullDescription: Bool = false
+    @Binding  var showBuySellView: Bool
     
     private let columns: [GridItem] = [
         GridItem(.flexible()),
@@ -27,8 +28,9 @@ struct DetailView: View {
     ]
     private let spacing: CGFloat = 30
     
-    init(coin: CoinModel) {
+    init(coin: CoinModel , b : Binding<Bool>) {
         _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
+       _showBuySellView = b
     }
     
     var body: some View {
@@ -54,7 +56,7 @@ struct DetailView: View {
                 
                            
                            
-                 NavigationLink(destination: BuySellCoinsView(coin:.constant(vm.coin) , showBuySellView:.constant(true) ), label: {
+                 NavigationLink(destination: BuySellCoinsView(coin:.constant(vm.coin) , showBuySellView: $showBuySellView), label: {
                  
                         Text("Start Exchanging!")
                          .frame(width: 250,height:10 ,alignment: .center)
@@ -87,13 +89,13 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            DetailView(coin: dev.coin)
-        }
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            DetailView(coin: dev.coin)
+//        }
+//    }
+//}
 
 extension DetailView {
     

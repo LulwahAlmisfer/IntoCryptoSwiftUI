@@ -64,9 +64,9 @@ struct BuySellCoinsView: View {
                     
                         Button(method == 1 ? LocalizedStringKey("Buy"): LocalizedStringKey("Sell")){
                             if method == 1 {
-                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! + Double(amount)!))
+                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount) ?? 0.0 + Double(amount)!))
                             } else {
-                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))
+                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount) ?? 0.0 - Double(amount)!))
                             }
                           
                             
