@@ -47,7 +47,7 @@ struct DetailView: View {
                     additionalGrid
                     
                 }.padding()
-                
+                Spacer()
                 VStack{
                     Text("Want to exchange this coin?") .font(Font.system(size: 14).italic().bold()).padding()
                     
@@ -55,15 +55,19 @@ struct DetailView: View {
                            
                            
                  NavigationLink(destination: BuySellCoinsView(coin:.constant(vm.coin) , showBuySellView:.constant(true) ), label: {
-                        
-                        Text("Start Exchanging")
-                     
-                     
-                       // showBuySellView.toggle()
-                        
-                 }).listStyle(.automatic)
-                 .background(Color("SecondMainColor"))
-                    .foregroundColor(Color("MainColor"))
+                 
+                        Text("Start Exchanging!")
+                         .frame(width: 250,height:10 ,alignment: .center)
+                                       .font(.system(size: 18))
+                                       .padding()
+                                       .foregroundColor(Color("MainColor"))
+                .overlay(
+                     RoundedRectangle(cornerRadius: 15)
+                                            .stroke(Color.theme.accent, lineWidth: 12)
+                               )
+                   //  let _ =   showBuySellView.toggle()
+                 }).background(Color("SecondMainColor"))
+                 .fontWeight(.semibold)
                            
                 }
              
@@ -172,22 +176,6 @@ extension DetailView {
         })
     }
     
-    private var websiteSection: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            if let websiteString = vm.websiteURL,
-               let url = URL(string: websiteString) {
-                Link("Website", destination: url)
-            }
-            
-            if let redditString = vm.redditURL,
-               let url = URL(string: redditString) {
-                Link("Reddit", destination: url)
-            }
-            
-        }
-        .accentColor(.blue)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.headline)
-    }
+ 
     
 }

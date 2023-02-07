@@ -11,7 +11,7 @@ struct RegisterView: View {
           
             ZStack {
          
-               //Color.theme.background.ignoresSafeArea()
+               Color.theme.background.ignoresSafeArea()
                 Button(action: Helper.goToAppSetting) {
                     VStack {
                         Image(systemName: "globe")
@@ -55,7 +55,7 @@ struct RegisterView: View {
                        .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                 
                         InputTextFieldView(text: $viewModel.newUser.Name,
-                                           placeholder: "Name",
+                                           placeholder: LocalizedStringKey("Name"),
                                            keyboardType: .namePhonePad,
                                            systemImage: nil)
                         .font(.title3)
@@ -69,9 +69,18 @@ struct RegisterView: View {
                     
                     }
                     Button(LocalizedStringKey("Sign up")){
-                    //ButtonView(title: "Sign up") {
+            
                         viewModel.create()
-                    }
+                    }  .frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
+                        .background(Color("SecondMainColor"))
+                            .foregroundColor(Color("MainColor"))
+                            .cornerRadius(40)
+                            .font(.system(size: 20) .bold())
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("MainColor"), lineWidth: 2)
+                                    
+                            )
                 }
                 .padding(.horizontal, 15)
                 .applyClose()

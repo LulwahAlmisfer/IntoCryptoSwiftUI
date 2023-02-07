@@ -23,10 +23,19 @@ struct ForgotPasswordView: View {
                 .cornerRadius(50)
                .shadow(color: Color.primary.opacity(0.05), radius: 60, x: 0.0, y: 16)
                 
-                ButtonLocalizedStringKey(title: "Send Password Reset") {
+                Button(LocalizedStringKey("Send Password Reset")){
                     viewModel.sendPasswordResetRequest()
                     presentationMode.wrappedValue.dismiss()
-                }
+                }.frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
+                    .background(Color("SecondMainColor"))
+                        .foregroundColor(Color("MainColor"))
+                        .cornerRadius(40)
+                        .font(.system(size: 20) .bold())
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("MainColor"), lineWidth: 2)
+                                
+                        )
             }
             .padding(.horizontal, 15)
             .navigationTitle("Reset Password")

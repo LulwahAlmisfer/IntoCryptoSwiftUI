@@ -106,24 +106,23 @@ extension HomeView {
     
     private var homeHeader: some View {
         HStack {
-            CircleButtonView(iconName: "plus")
+         /*   CircleButtonView(iconName: "plus")
             
                 .onTapGesture {
                     showPortfolioView.toggle()
                 }
                 .background(
                     CircleButtonAnimationView(animate: $showPortfolio)
-                )
-            Spacer()
+                )*/
+
             Text(showPortfolio ? "Portfolio" : "Live Prices")
-                .font(.headline)
+                .font(Font.title2)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
-                .animation(.none)
-            Spacer()
+    
+         
             
-        }
-        .padding(.trailing,60)
+        }.padding(.top,30)
     }
     
     private var allCoinsList: some View {

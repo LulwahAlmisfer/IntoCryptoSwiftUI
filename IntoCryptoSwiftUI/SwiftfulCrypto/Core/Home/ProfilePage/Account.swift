@@ -58,7 +58,8 @@ struct Account: View {
                                 
                                 ForEach(self.AccountSettings, id: \.self)
                                 {
-                                    item in Text(email)
+                                    //two texts for localization reasons
+             item in Text("Email: ") + Text(" \(email)")
                                     
                                 } .foregroundColor(Color("MainColor"))
                                     .listRowBackground(Color("SecondMainColor"))

@@ -26,6 +26,7 @@ struct LoginView: View {
                 }
                 Spacer()
                 Text("Log In")
+                    
                     .font(.system(size: 50, weight: .bold))
                     .foregroundColor(Color("SecondMainColor"))
                     .padding()
@@ -69,20 +70,41 @@ struct LoginView: View {
                     }
                 }
                 
-                VStack(spacing: 16) {
+                VStack(spacing: 16){
                     Button(LocalizedStringKey("Login")){
-                    //ButtonView(title: "Login") {
+                       // ButtonView(title: "Login") {}
                         viewModel.login()
                         
                     }
+                    .frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
+                    .background(Color("SecondMainColor"))
+                        .foregroundColor(Color("MainColor"))
+                        .cornerRadius(40)
+                        .font(.system(size: 20) .bold())
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("MainColor"), lineWidth: 2)
+                                
+                        )
+
+        
                     
                     Button(LocalizedStringKey("Register") ){
-                    //ButtonView(title: "Register",
-                               //background: .clear,
-                              // foreground: .primary,
-                             //  border: .primary) {
+
                         showRegistration.toggle()
                     }
+                    .frame(maxWidth: .infinity, maxHeight: 60,alignment: .center)
+                        .background(.clear)
+                            .foregroundColor(Color("SecondMainColor"))
+                            .cornerRadius(40)
+                            .font(.system(size: 20) .bold())
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("SecondMainColor"), lineWidth: 2)
+                                    
+                            )
+                        
+
                                
                     .sheet(isPresented: $showRegistration) {
                             RegisterView()
@@ -172,7 +194,7 @@ struct ButtonLocalizedStringKey: View {
 struct InputTextFieldView: View {
    
    @Binding var text: String
-   let placeholder: String
+   let placeholder: LocalizedStringKey
    let keyboardType: UIKeyboardType
    let systemImage: String?
    
@@ -215,7 +237,7 @@ struct InputTextFieldView: View {
 struct InputPasswordView: View {
    
    @Binding var password: String
-   let placeholder: String
+   let placeholder: LocalizedStringKey
    let systemImage: String?
     
    

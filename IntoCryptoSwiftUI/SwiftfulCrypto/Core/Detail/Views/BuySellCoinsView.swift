@@ -18,9 +18,9 @@ struct BuySellCoinsView: View {
                     if let coin = coin {
                         HStack {
                             
-                            CoinImageView(coin: coin).frame(width: 30, height: 30)
+                            CoinImageView(coin: coin).frame(width: 40, height: 40)
                             
-                            Text(coin.name).foregroundColor(.theme.accent).fontWeight(.semibold)
+                            Text(coin.name).foregroundColor(.theme.accent).fontWeight(.semibold).font(.system(size: 20))
                         
                             
                         }
@@ -55,14 +55,14 @@ struct BuySellCoinsView: View {
                             if method == 2 {
                                 
                                 HStack {
-                                    Text("Owned:").foregroundColor(.theme.accent).fontWeight(.semibold)
+                                    Text("Holdings Amount:").foregroundColor(.theme.accent).fontWeight(.semibold)
                                     Text(oldamount).foregroundColor(.theme.accent)
                                 }.padding()
                             }
                         }.padding().foregroundColor(.theme.accent).font(.title3)
                         Spacer()
                     
-ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
+                        Button(method == 1 ? LocalizedStringKey("Buy"): LocalizedStringKey("Sell")){
                             if method == 1 {
                                 vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! + Double(amount)!))
                             } else {
@@ -72,7 +72,16 @@ ButtonLocalizedStringKey(title: method == 1 ? "Buy": "Sell"){
                             
     showBuySellView.toggle()
                             
-                        }
+}.frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
+                            .background(Color("SecondMainColor"))
+                                .foregroundColor(Color("MainColor"))
+                                .cornerRadius(40)
+                                .font(.system(size: 20) .bold())
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 40)
+                                        .stroke(Color("MainColor"), lineWidth: 2)
+                                        
+                                )
                     }
                 }.padding()
                     .padding(.vertical,30)
