@@ -95,8 +95,8 @@ struct BuySellCoinsView: View {
                 }.padding()
                     .padding(.vertical,30)
             }
-        }  .navigationBarTitle("")
-            .navigationBarHidden(true)
+        }  .navigationBarTitle("", displayMode: .inline)
+     
             .onAppear{
             
             updateSelectedCoin2(coin: coin!)
