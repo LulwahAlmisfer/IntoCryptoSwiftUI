@@ -9,7 +9,7 @@ struct BuySellCoinsView: View {
     @State var amount = ""
     @State var oldamount = "0"
     @Binding  var showBuySellView: Bool
-    
+    @State var showingAlert = false
     var body: some View {
         NavigationView{
             ZStack {
@@ -72,18 +72,21 @@ struct BuySellCoinsView: View {
                                 }
                                
                             } else {
-                                vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))
+                                if oldamount == "0.0"{
+                                    showingAlert.toggle()
+                                    showBuySellView.toggle()
+                                } else {
+                                    vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))}
                             }
-                          
-                            
+                     
+                             
     showBuySellView.toggle()
                             
 }.frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
                             .background(Color("SecondMainColor"))
                                 .foregroundColor(Color("MainColor"))
                                 .cornerRadius(40)
-                                .font(.system(size: 20) .bold())
-                                .overlay(
+                                .font(.system(size: 20) .bold())                                .overlay(
                                     RoundedRectangle(cornerRadius: 40)
                                         .stroke(Color("MainColor"), lineWidth: 2)
                                         
@@ -97,6 +100,10 @@ struct BuySellCoinsView: View {
             updateSelectedCoin2(coin: coin!)
             
         }
+        .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("you can't sell"), message: Text("Buy first"), dismissButton: .default(Text("Got it!")))
+                }
+        
         }
         
     private func updateSelectedCoin2(coin: CoinModel) {
@@ -106,7 +113,7 @@ struct BuySellCoinsView: View {
            let amount2 = portfolioCoin.currentHoldings {
             oldamount = "\(amount2)"
         } else {
-            oldamount = ""
+            oldamount = "0.0"
         }
     }
     }
