@@ -12,7 +12,9 @@ struct BuySellCoinsView: View {
     @State var showingAlert = false
     @State var showingAlert2 = false
     @AppStorage("WalletCredit") var WalletCredit : Double = 100000
+    @State var OldWalletCredit: Double = 0.0
     @AppStorage("total") var total : Double = 0.0
+    
     
     var body: some View {
         NavigationView{
@@ -74,9 +76,9 @@ struct BuySellCoinsView: View {
                             }
                         }.padding().foregroundColor(.theme.accent).font(.title3)
                         Spacer()
-                        Button("Reset Balance", action: {
+                        Button(LocalizedStringKey("Reset Balance"), action: {
                             WalletCredit = 100000.0
-                          
+                    
                         }).foregroundColor(.red).bold().italic()
                         Button(method == 1 ? LocalizedStringKey("Buy"): LocalizedStringKey("Sell")){
                             if method == 1 {
@@ -89,6 +91,18 @@ struct BuySellCoinsView: View {
                    total = Double(amount)! * coin.currentPrice
                 
                    WalletCredit = ( WalletCredit - (Double(amount)! * coin.currentPrice))
+                   
+       
+                   
+            
+                   if WalletCredit - total < 0.0{
+                       WalletCredit = WalletCredit + total
+                       showingAlert2.toggle()
+                       showBuySellView.toggle()
+                   }
+                       
+                   
+                     
                
             }else{
                                     vm.updatePortfolio(coin: coin, amount:  Double(amount)!)
@@ -135,7 +149,7 @@ struct BuySellCoinsView: View {
             updateSelectedCoin2(coin: coin!)
             
         }.alert(isPresented: $showingAlert) {
-                    Alert(title: Text("You can't sell!"), message: Text("Buy need to buy first"), dismissButton: .default(Text("Got it!")))
+                    Alert(title: Text("You can't sell!"), message: Text("You need to buy first"), dismissButton: .default(Text("Got it!")))
             
         }.alert(isPresented: $showingAlert2) {
             Alert(title: Text("You can't buy!"), message: Text("Reset or Sell"), dismissButton: .default(Text("Got it!")))

@@ -74,5 +74,11 @@
 "24h Low" = "24h Low";
 "24h Price Change" = "24h Price Change";
 "24h Market Cap Change" = "24h Market Cap Change";
-//"Block Time" = "Block Time";
-//"Hashing Algorithm" = "Hashing Algorithm";
+"Balance:" = "Balance:";
+"Reset Balance" = "Reset Balance";
+"You can't sell!" = "You can't sell!";
+"You need to buy first" = "You need to buy first";
+"Got it!" = "Got it!";
+"You can't buy!" = "You can't buy!";
+"Reset or Sell" = "Reset or Sell";
+"Got it!" = "Got it!";

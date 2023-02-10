@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @State private var showRegistration = false
     @State private var showForgotPassword = false
     @StateObject private var viewModel = LoginViewModelImpl(
@@ -14,16 +15,29 @@ struct LoginView: View {
         ZStack {
             Color.theme.background.ignoresSafeArea()
             VStack(spacing: 16) {
-                Button(action: Helper.goToAppSetting) {
-                 HStack {
-                     Image(systemName: "globe")
-                         .resizable()
-                         .frame(width: 25, height: 25)
-                         .foregroundColor(Color("SecondMainColor"))
-                     Spacer()
-                 }
-                 .padding(.horizontal,30)
+                HStack(spacing: 330){
+                    Button(action: Helper.goToAppSetting) {
+                            HStack{
+                                Image(systemName: "globe")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(Color("SecondMainColor"))
+                            }}
+                     
+                        Button(action: {
+                            isDarkMode.toggle()
+                            
+                        }, label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "cloud.sun.circle")
+                                .resizable()
+                                .frame(width: 27, height: 27,alignment: .top)
+                                .foregroundColor(Color("SecondMainColor"))
+                        }
+                               
+                        ).preferredColorScheme(isDarkMode ? .dark : .light)
+                    
                 }
+                
                 Spacer()
                 
                 

@@ -4,11 +4,16 @@ import SwiftUI
 
 struct OnBoarding1View: View {
     @Binding var shouldshowonb :Bool
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+
     var body: some View {
      
         ZStack{
+        
             Color.theme.background.ignoresSafeArea()
             VStack {
+               
+                
                 HStack{
                     Button(action: Helper.goToAppSetting) {
                         HStack {
@@ -16,8 +21,23 @@ struct OnBoarding1View: View {
                                 .resizable()
                                 .frame(width: 25, height: 25)
                                 .foregroundColor(Color("SecondMainColor"))
-                        }   
+                        }
+                        HStack(alignment: .center){
+                                Button(action: {
+                                isDarkMode.toggle()
+                                    
+                                }, label: {
+                                    Image(systemName: isDarkMode ? "moon.circle.fill" : "cloud.sun.circle")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(Color("SecondMainColor"))
+                                }
+                                       
+                                )}.preferredColorScheme(isDarkMode ? .dark : .light)
                     }
+                 
+                        
+                    
                     Spacer()
                     Text("Skip").underline().onTapGesture {
                         shouldshowonb.toggle()

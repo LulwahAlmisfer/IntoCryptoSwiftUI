@@ -34,7 +34,7 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
                 
                 if selector == 2 {
                     
-                    Text("Balance: \(WalletCredit, specifier: "%.0f")").bold().italic().padding(.top).foregroundColor(.theme.accent)
+                    Text("Balance: \(WalletCredit, specifier: "%.0f")").bold().italic().padding(.top).foregroundColor(.gray)
                 }
                 if selector == 1 {
                     portfolioCoinsListH.padding(.leading)

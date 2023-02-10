@@ -13,7 +13,7 @@ struct RegisterView: View {
          
                Color.theme.background.ignoresSafeArea()
                 Button(action: Helper.goToAppSetting) {
-                    VStack {
+                    VStack{
                         Image(systemName: "globe")
                             .resizable()
                             .frame(width: 25, height: 25)
@@ -21,6 +21,7 @@ struct RegisterView: View {
                             .foregroundColor(Color("SecondMainColor"))
                         Spacer()
                     }
+                    .padding(.top)
                     .padding(.trailing,300)
                     
                 }
