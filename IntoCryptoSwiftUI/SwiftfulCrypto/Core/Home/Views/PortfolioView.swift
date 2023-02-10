@@ -7,6 +7,7 @@ struct PortfolioView: View { //TODO: change the name PortfolioView to EditPortfo
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
+
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -167,7 +168,7 @@ extension PortfolioView {
             else { return }
         
         // save to portfolio
-        vm.updatePortfolio(coin: coin, amount: amount)
+ vm.updatePortfolio(coin: coin, amount: amount)
         
         // show checkmark
         withAnimation(.easeIn) {

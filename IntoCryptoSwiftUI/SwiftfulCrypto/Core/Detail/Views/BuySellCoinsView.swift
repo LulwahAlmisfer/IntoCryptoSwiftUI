@@ -10,9 +10,14 @@ struct BuySellCoinsView: View {
     @State var oldamount = "0"
     @Binding  var showBuySellView: Bool
     @State var showingAlert = false
+    @State var showingAlert2 = false
+    @AppStorage("WalletCredit") var WalletCredit : Double = 100000
+    @AppStorage("total") var total : Double = 0.0
+    
     var body: some View {
         NavigationView{
             ZStack {
+                
                 Color.theme.background.ignoresSafeArea()
                 VStack (spacing:25){
                     if let coin = coin {
@@ -29,29 +34,37 @@ struct BuySellCoinsView: View {
                             Text("Sell").tag(2)
                         
                         }.pickerStyle(.segmented).frame(width: 330,alignment: .center)
-                            .padding()
+                           
      
-                        
+                        HStack{
+                            
+            Text("Balance: \(WalletCredit, specifier: "%.0f")").bold().italic()
+                            
+                            
+                        }.foregroundColor(.gray)
                         
                         HStack{
                             Text("Amount:").font(.title3).fontWeight(.semibold)
                             TextField("Enter Amount", text: $amount).textFieldStyle(.roundedBorder)
-                        }.padding(30).foregroundColor(.theme.accent)
+                        }.padding(2).foregroundColor(.theme.accent)
                         
                         
             
                         VStack{
                             HStack(alignment: .center){
                                 Text("Market price:").fontWeight(.semibold)
-                                Text("\(coin.currentPrice.asNumberString())")
+                                Text("$\(coin.currentPrice.asNumberString())")
                             }.padding()
 
                   
-                            HStack(alignment: .center){
+                                
+                            HStack{
+                                
                                 Text("Your Total:").fontWeight(.semibold)
-                                Text("\((coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
+     Text("\(( coin.currentPrice * (Double(amount) ?? 0)).asNumberString())")
+                                
                             }
-                            
+                                
                             if method == 2 {
                                 
                                 HStack {
@@ -61,27 +74,45 @@ struct BuySellCoinsView: View {
                             }
                         }.padding().foregroundColor(.theme.accent).font(.title3)
                         Spacer()
-                    
+                        Button("Reset Balance", action: {
+                            WalletCredit = 100000.0
+                          
+                        }).foregroundColor(.red).bold().italic()
                         Button(method == 1 ? LocalizedStringKey("Buy"): LocalizedStringKey("Sell")){
                             if method == 1 {
                                 
-                                if let oldamountD = Double(oldamount) {
-                                    vm.updatePortfolio(coin: coin, amount: oldamountD + Double(amount)!)
-                                } else {
+               if let oldamountD = Double(oldamount) {
+                   
+                 vm.updatePortfolio(coin: coin, amount: oldamountD + Double(amount)!)
+                   
+                   
+                   total = Double(amount)! * coin.currentPrice
+                
+                   WalletCredit = ( WalletCredit - (Double(amount)! * coin.currentPrice))
+               
+            }else{
                                     vm.updatePortfolio(coin: coin, amount:  Double(amount)!)
+                                 
+                           
                                 }
                                
                             } else {
                                 if oldamount == "0.0"{
                                     showingAlert.toggle()
                                     showBuySellView.toggle()
-                                } else {
-                                    vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))}
+                                
+                                }else {
+        vm.updatePortfolio(coin: coin, amount:( Double(oldamount)! - Double(amount)!))
+                    
+                                        WalletCredit = (WalletCredit + (coin.currentPrice * Double(amount)!))
+                                  
+                                    
+                                }
                             }
-                     
+                          
                              
     showBuySellView.toggle()
-                            
+                        
 }.frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
                             .background(Color("SecondMainColor"))
                                 .foregroundColor(Color("MainColor"))
@@ -91,7 +122,9 @@ struct BuySellCoinsView: View {
                                         .stroke(Color("MainColor"), lineWidth: 2)
                                         
                                 )
+                            
                     }
+                        
                 }.padding()
                     .padding(.vertical,30)
             }
@@ -101,11 +134,14 @@ struct BuySellCoinsView: View {
             
             updateSelectedCoin2(coin: coin!)
             
-        }
-        .alert(isPresented: $showingAlert) {
+        }.alert(isPresented: $showingAlert) {
                     Alert(title: Text("You can't sell!"), message: Text("Buy need to buy first"), dismissButton: .default(Text("Got it!")))
-                }
-        
+            
+        }.alert(isPresented: $showingAlert2) {
+            Alert(title: Text("You can't buy!"), message: Text("Reset or Sell"), dismissButton: .default(Text("Got it!")))
+            
+        }
+   
         }
         
     private func updateSelectedCoin2(coin: CoinModel) {
@@ -118,6 +154,10 @@ struct BuySellCoinsView: View {
             oldamount = "0.0"
         }
     }
+
+    
+    
+    
     }
 
 

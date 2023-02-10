@@ -7,10 +7,10 @@ struct LoginView: View {
     @StateObject private var viewModel = LoginViewModelImpl(
         service: LoginServiceImpl()
     )
-    @AppStorage("key9")  var shouldshowonb = true
+    @AppStorage("key18")  var shouldshowonb = true
 
     var body: some View {
-        
+        //change language icon
         ZStack {
             Color.theme.background.ignoresSafeArea()
             VStack(spacing: 16) {
@@ -25,11 +25,15 @@ struct LoginView: View {
                  .padding(.horizontal,30)
                 }
                 Spacer()
+                
+                
+                //Login Title
                 Text("Log In")
                     
                     .font(.system(size: 50, weight: .bold))
                     .foregroundColor(Color("SecondMainColor"))
                     .padding()
+                
                 VStack {
                     
                     //email and password
@@ -58,6 +62,8 @@ struct LoginView: View {
                                 }
                 .padding(.vertical)
 
+                
+                //forget password button -> goes to the forget password page
                 VStack {
                   
                     Button(action: {
@@ -70,12 +76,11 @@ struct LoginView: View {
                             ForgotPasswordView()
                     }
                 }
-                
+                //Login Button to sign the user after checking the info entered
                 VStack(spacing: 16){
                     Button(LocalizedStringKey("Login")){
                       
                         viewModel.login()
-                        
                     }
                     .frame(maxWidth: .infinity, maxHeight: 65,alignment: .center)
                     .background(Color("SecondMainColor"))
@@ -85,10 +90,12 @@ struct LoginView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("MainColor"), lineWidth: 2)
-                                
                         )
-
+                     
+                    //-------------------------------//
         
+        //register button that'll go to the register and sign up the user
+         //register checks if the email is used in the database or not before signning up the user
                     
                     Button(LocalizedStringKey("Register") ){
 
@@ -103,16 +110,11 @@ struct LoginView: View {
                                 RoundedRectangle(cornerRadius: 40)
                                     .stroke(Color("SecondMainColor"), lineWidth: 2)
                                     
-                            )
-                        
-
-                               
-                    .sheet(isPresented: $showRegistration) {
+                            ).sheet(isPresented: $showRegistration) {
                             RegisterView()
                     }
                 }
                 Spacer()
-                
             }
             .padding(.horizontal, 15)
             .alert(isPresented: $viewModel.hasError,

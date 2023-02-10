@@ -13,7 +13,7 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
     @State private var showDetailView: Bool = false
     @State private var showBuySellView: Bool = false
     @State var selector = 1
-    
+    @AppStorage("WalletCredit") var WalletCredit : Double = 100000
     var body: some View {
         ZStack {
             
@@ -106,8 +106,9 @@ extension HomeView {
     
     private var homeHeader: some View {
         HStack {
-
+        
             Text(showPortfolio ? "Portfolio" : LocalizedStringKey("Live Prices"))
+            
                 .font(Font.title2)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
