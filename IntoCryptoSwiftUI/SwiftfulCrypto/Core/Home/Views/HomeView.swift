@@ -32,6 +32,10 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
                     homeHeader
                 }
                 
+                if selector == 2 {
+                    
+                    Text("Balance: \(WalletCredit, specifier: "%.0f")").bold().italic().padding(.top).foregroundColor(.theme.accent)
+                }
                 if selector == 1 {
                     portfolioCoinsListH.padding(.leading)
                     SearchBarView(searchText: $vm.searchText)
@@ -50,7 +54,8 @@ struct HomeView: View { //TODO: change the name HomeView to mainTabView
                             Text("Home")
                         } }.tag(1)
                     
-                    portfolioCoinsList.tabItem {
+                    portfolioCoinsList
+                        .tabItem {
                         VStack {
                             Image(systemName: "creditcard")
                             Text("Portfolio")
