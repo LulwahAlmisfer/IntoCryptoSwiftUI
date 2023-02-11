@@ -15,14 +15,14 @@ struct LoginView: View {
         ZStack {
             Color.theme.background.ignoresSafeArea()
             VStack(spacing: 16) {
-                HStack(spacing: 330){
+                HStack(spacing: 270){
                     Button(action: Helper.goToAppSetting) {
-                            HStack{
+                          
                                 Image(systemName: "globe")
                                     .resizable()
                                     .frame(width: 25, height: 25)
                                     .foregroundColor(Color("SecondMainColor"))
-                            }}
+                            }
                      
                         Button(action: {
                             isDarkMode.toggle()
@@ -30,7 +30,7 @@ struct LoginView: View {
                         }, label: {
                             Image(systemName: isDarkMode ? "moon.circle.fill" : "cloud.sun.circle")
                                 .resizable()
-                                .frame(width: 27, height: 27,alignment: .top)
+                                .frame(width: 25, height: 25,alignment: .top)
                                 .foregroundColor(Color("SecondMainColor"))
                         }
                                
