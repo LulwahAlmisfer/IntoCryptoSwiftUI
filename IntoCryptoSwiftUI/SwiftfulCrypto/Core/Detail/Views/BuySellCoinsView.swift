@@ -107,7 +107,6 @@ struct BuySellCoinsView: View {
                                     
                                 } else {
                                     if oldamount < amount {
-                                        
                                         showingAlert.toggle()
                                         showBuySellView.toggle()
                                         
@@ -143,13 +142,13 @@ struct BuySellCoinsView: View {
                 updateSelectedCoin2(coin: coin!)
                 
             }.alert(isPresented: $showingAlert) {
-                Alert(title: Text("You can't sell!"), message: Text("You need to buy first"), dismissButton: .default(Text("Got it!")))}
+                Alert(title: Text("You can't sell!"), message: Text("Reset balance or Buy"), dismissButton: .default(Text("Got it!")))}
         }.navigationBarTitle("", displayMode: .inline).onAppear{
             
             updateSelectedCoin2(coin: coin!)
             
         }.alert(isPresented: $showingAlert2) {
-            Alert(title: Text("You can't buy!"), message: Text("Reset or Sell"), dismissButton: .default(Text("Got it!")))}
+            Alert(title: Text("You can't buy!"), message: Text("Reset balance or Sell"), dismissButton: .default(Text("Got it!")))}
     }
 
     

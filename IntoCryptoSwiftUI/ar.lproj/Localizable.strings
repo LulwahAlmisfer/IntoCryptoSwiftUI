@@ -78,9 +78,9 @@
 "Balance:" = "الرصيد:";
 "Reset Balance" = "استعادة الرصيد";
 "You can't sell!" = "لا تستطيع البيع!";
-"You need to buy first" = "قم بالشراء أو استعادة الرصيد";
+"Reset balance or Buy" = "قم بالشراء أو استعادة الرصيد";
 "Got it!" = "فهمت!";
 "You can't buy!" = "لا تستطيع الشراء!";
-"Reset or Sell" = "قم بالبيع أو استعادة الرصيد";
+"Reset balance or Sell" = "قم بالبيع أو استعادة الرصيد";
 "Got it!" = "فهمت!";
 
