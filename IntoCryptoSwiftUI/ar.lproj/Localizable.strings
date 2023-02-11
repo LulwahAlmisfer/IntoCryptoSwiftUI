@@ -77,10 +77,10 @@
 "24h Market Cap Change" = " القيمة السوقية خلال ٢٤س";
 "Balance:" = "الرصيد:";
 "Reset Balance" = "استعادة الرصيد";
-"You can't sell!" = "لا تستطيع الشراء!";
-"You need to buy first" = "يجب عليك الشراء اولا";
-"Got it!" = "!فهمت";
+"You can't sell!" = "لا تستطيع البيع!";
+"You need to buy first" = "قم بالشراء أو استعادة الرصيد";
+"Got it!" = "فهمت!";
 "You can't buy!" = "لا تستطيع الشراء!";
-"Reset or Sell" = "قم بالبيع اعادة التعيين";
-"Got it!" = "!فهمت";
+"Reset or Sell" = "قم بالبيع أو استعادة الرصيد";
+"Got it!" = "فهمت!";
 
